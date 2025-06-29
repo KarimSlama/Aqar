@@ -1,4 +1,4 @@
-package com.example.aqar
+package com.aqar.realestate
 
 import io.flutter.embedding.android.FlutterActivity
 
