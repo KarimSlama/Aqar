@@ -14,6 +14,7 @@ class AqarApp extends StatelessWidget {
       title: AqarString.appTitle,
       theme: AqarTheme.lightTheme,
       darkTheme: AqarTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       onGenerateRoute: appRouter.generateRoute,
       initialRoute: Routes.splashScreen,
