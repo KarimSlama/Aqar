@@ -18,4 +18,10 @@ class AqarString {
   static const String forYourFutureHouse = 'for your future house';
   static const String exploreTopRatedHomesThatMatchYourLifestyleAndBudget =
       'Explore top-rated homes that match your\nlifestyle and budget.';
+  static const String readyTo = 'Ready to ';
+  static const String explore = 'Explore?';
+  static const String or = 'Or';
+  static const String continueWithEmail = 'Continue with Email';
+  static const String dontHaveAnAccount = 'Don\'t have an account? ';
+  static const String register = 'Register';
 }

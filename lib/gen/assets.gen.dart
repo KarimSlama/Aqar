@@ -9,6 +9,19 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/facebook.svg
+  String get facebook => 'assets/icons/facebook.svg';
+
+  /// File path: assets/icons/google.svg
+  String get google => 'assets/icons/google.svg';
+
+  /// List of all assets
+  List<String> get values => [facebook, google];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -21,6 +34,26 @@ class $AssetsImagesGen {
   /// File path: assets/images/house3.png
   AssetGenImage get house3 => const AssetGenImage('assets/images/house3.png');
 
+  /// File path: assets/images/house4.png
+  AssetGenImage get house4Png =>
+      const AssetGenImage('assets/images/house4.png');
+
+  /// File path: assets/images/house4.svg
+  String get house4Svg => 'assets/images/house4.svg';
+
+  /// File path: assets/images/house5.png
+  AssetGenImage get house5Png =>
+      const AssetGenImage('assets/images/house5.png');
+
+  /// File path: assets/images/house5.svg
+  String get house5Svg => 'assets/images/house5.svg';
+
+  /// File path: assets/images/house6.png
+  AssetGenImage get house6 => const AssetGenImage('assets/images/house6.png');
+
+  /// File path: assets/images/house7.png
+  AssetGenImage get house7 => const AssetGenImage('assets/images/house7.png');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
@@ -29,10 +62,16 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/splash_bg_image.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
     house,
     house2,
     house3,
+    house4Png,
+    house4Svg,
+    house5Png,
+    house5Svg,
+    house6,
+    house7,
     logo,
     splashBgImage,
   ];
@@ -41,6 +80,7 @@ class $AssetsImagesGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
