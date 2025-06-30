@@ -35,7 +35,6 @@ class BoardingActionButtons extends StatelessWidget {
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               minimumSize: Size(MediaQuery.of(context).size.width * .5, 40),
-              backgroundColor: AqarColors.green,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(AqarSizes.borderRadiusLg),
               ),

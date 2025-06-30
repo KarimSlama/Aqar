@@ -51,7 +51,6 @@ class SplashScreen extends StatelessWidget {
                     const Spacer(),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AqarColors.green,
                         minimumSize: const Size(200, 50),
                       ),
                       onPressed: () =>

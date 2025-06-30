@@ -11,7 +11,7 @@ class AqarElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: AqarColors.white,
-      backgroundColor: AqarColors.darkBlue,
+      backgroundColor: AqarColors.green,
       disabledBackgroundColor: Colors.grey,
       disabledForegroundColor: Colors.grey,
       padding: const EdgeInsets.symmetric(vertical: 18),
@@ -28,7 +28,7 @@ class AqarElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: AqarColors.white,
-      backgroundColor: AqarColors.darkBlue,
+      backgroundColor: AqarColors.green,
       disabledBackgroundColor: Colors.grey,
       disabledForegroundColor: Colors.grey,
       padding: const EdgeInsets.symmetric(vertical: 18),
