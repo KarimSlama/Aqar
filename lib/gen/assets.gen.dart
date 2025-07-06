@@ -54,6 +54,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/house7.png
   AssetGenImage get house7 => const AssetGenImage('assets/images/house7.png');
 
+  /// File path: assets/images/login_img.svg
+  String get loginImg => 'assets/images/login_img.svg';
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
@@ -72,6 +75,7 @@ class $AssetsImagesGen {
     house5Svg,
     house6,
     house7,
+    loginImg,
     logo,
     splashBgImage,
   ];

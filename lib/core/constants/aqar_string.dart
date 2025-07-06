@@ -24,4 +24,13 @@ class AqarString {
   static const String continueWithEmail = 'Continue with Email';
   static const String dontHaveAnAccount = 'Don\'t have an account? ';
   static const String register = 'Register';
+  static const String email = 'Email';
+  static const String password = 'Password';
+  static const String forgotPassword = 'Forgot Password';
+  static const String letsSignIn = 'Let\'s sign in';
+  static const String login = 'Login';
+  static const String congratulations = 'Congratulations!';
+  static const String youLoggedInSuccessfully = 'You logged in successfully!';
+  static const String getReadyToFeelConfidentWithANewAqar =
+      'Get Ready to feel confident with a new Aqar';
 }
