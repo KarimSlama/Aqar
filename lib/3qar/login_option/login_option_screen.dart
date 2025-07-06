@@ -5,6 +5,7 @@ import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/common/widgets/texts/register_text_button.dart';
 import '../../core/constants/aqar_string.dart';
 import 'widgets/continue_with_email_login.dart';
 import 'widgets/social_method.dart';
@@ -41,13 +42,7 @@ class LoginOptionScreen extends StatelessWidget {
               ContinueWithEmailLogin(),
               Center(child: Text(AqarString.or)),
               SocialMethod(),
-              Center(
-                child: SpanText(
-                  text: AqarString.dontHaveAnAccount,
-                  actionText: AqarString.register,
-                  actionTextOnTap: () {},
-                ),
-              )
+              RegisterTextButton()
             ],
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class VibeHelperFunctions {
+class AqarHelperFunctions {
   static Color? getColor(String value) {
     switch (value) {
       case 'Green':
