@@ -8,11 +8,18 @@ import '../../../core/common/widgets/aqar_text_form_field.dart';
 import '../../../core/constants/aqar_sizes.dart';
 import '../../../core/constants/aqar_string.dart';
 
-class LoginTextFormFields extends StatelessWidget {
+class LoginTextFormFields extends StatefulWidget {
   const LoginTextFormFields({
     super.key,
   });
 
+  @override
+  State<LoginTextFormFields> createState() => _LoginTextFormFieldsState();
+}
+
+bool isVisible = false;
+
+class _LoginTextFormFieldsState extends State<LoginTextFormFields> {
   @override
   Widget build(BuildContext context) {
     final loginCubit = context.read<LoginCubit>();
@@ -34,9 +41,13 @@ class LoginTextFormFields extends StatelessWidget {
             prefixIcon: Iconsax.password_check_copy,
             validator: (value) => Validator.validatePassword(value),
             inputType: TextInputType.visiblePassword,
-            isObscureText: true,
-            suffixIcon: Iconsax.eye_copy,
-            suffixPressed: () {},
+            isObscureText: isVisible,
+            suffixIcon: isVisible ? Iconsax.eye_slash_copy : Iconsax.eye_copy,
+            suffixPressed: () {
+              setState(() {
+                isVisible = !isVisible;
+              });
+            },
             maxLines: 1,
             controller: loginCubit.passwordController,
           ),
