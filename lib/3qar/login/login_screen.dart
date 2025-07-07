@@ -2,6 +2,8 @@ import 'package:aqar/3qar/login/controller/login_cubit.dart';
 import 'package:aqar/3qar/login_option/widgets/social_method.dart';
 import 'package:aqar/core/common/widgets/texts/register_text_button.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
+import 'package:aqar/core/helpers/extensions.dart';
+import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -50,7 +52,11 @@ class LoginScreen extends StatelessWidget {
               Center(child: Text(AqarString.or)),
               SocialMethod(),
               SizedBox(height: AqarSizes.defaultSpace),
-              RegisterTextButton(),
+              RegisterTextButton(
+                  text: AqarString.dontHaveAnAccount,
+                  actionText: AqarString.register,
+                  onActionTextTap: () =>
+                      context.pushNamed(Routes.signUpScreen)),
               LoginBlocListener(),
             ],
           ),

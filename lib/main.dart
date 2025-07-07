@@ -14,5 +14,6 @@ void main() async {
     url: dotenv.get('SUPABASE_URL'),
     anonKey: dotenv.get('SUPABASE_ANON_KEY'),
   );
+
   runApp(AqarApp(appRouter: AppRouter()));
 }

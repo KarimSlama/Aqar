@@ -23,14 +23,21 @@ class AqarString {
   static const String or = 'Or';
   static const String continueWithEmail = 'Continue with Email';
   static const String dontHaveAnAccount = 'Don\'t have an account? ';
+  static const String alreadyHaveAnAccount = 'Already have an account ';
   static const String register = 'Register';
   static const String email = 'Email';
+  static const String firstName = 'First Name';
+  static const String lastName = 'Last Name';
+  static const String phone = 'Phone';
   static const String password = 'Password';
+  static const String signUp = 'Sign Up';
   static const String forgotPassword = 'Forgot Password';
   static const String letsSignIn = 'Let\'s sign in';
   static const String login = 'Login';
   static const String congratulations = 'Congratulations!';
   static const String youLoggedInSuccessfully = 'You logged in successfully!';
+  static const String youJoinedAqarSuccessfully =
+      'You joinded 3qar successfully!';
   static const String getReadyToFeelConfidentWithANewAqar =
       'Get Ready to feel confident with a new Aqar';
 }
