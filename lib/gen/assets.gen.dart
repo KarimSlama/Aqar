@@ -12,14 +12,23 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/coupon.svg
+  String get coupon => 'assets/icons/coupon.svg';
+
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
 
   /// File path: assets/icons/google.svg
   String get google => 'assets/icons/google.svg';
 
+  /// File path: assets/icons/nearby.svg
+  String get nearby => 'assets/icons/nearby.svg';
+
+  /// File path: assets/icons/rent.svg
+  String get rent => 'assets/icons/rent.svg';
+
   /// List of all assets
-  List<String> get values => [facebook, google];
+  List<String> get values => [coupon, facebook, google, nearby, rent];
 }
 
 class $AssetsImagesGen {

@@ -1,3 +1,4 @@
+import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:aqar/core/constants/aqar_colors.dart';
@@ -9,6 +10,7 @@ class AqarTextFormField extends StatelessWidget {
   final String? label;
   final String? hint;
   final bool isObscureText;
+  final bool isDisabeldBoarder;
   final int? maxLength;
   final IconData? prefixIcon;
   final double? height;
@@ -22,7 +24,7 @@ class AqarTextFormField extends StatelessWidget {
   final Function(String)? onChanged;
   final double borderWidth;
   final Color borderColor;
-  final Color? fillColor;
+  final Color? fillColor, hintColor;
   final int? maxLines;
   final TextStyle? textStyle;
   final Iterable<String>? autofillHints;
@@ -52,6 +54,8 @@ class AqarTextFormField extends StatelessWidget {
     this.textStyle,
     this.autofillHints,
     this.maxLines,
+    this.hintColor,
+    this.isDisabeldBoarder = false,
   });
 
   @override
@@ -79,16 +83,31 @@ class AqarTextFormField extends StatelessWidget {
                 )
               : null,
           labelText: label,
+          contentPadding: EdgeInsets.only(top: AqarSizes.md),
+          hintStyle: TextStyle(color: hintColor),
           hintText: hint,
           fillColor: fillColor,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 0),
-            borderSide: BorderSide(color: borderColor, width: borderWidth),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 0),
-            borderSide: BorderSide(color: borderColor, width: borderWidth),
-          ),
+          border: isDisabeldBoarder
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(borderRadius ?? 0),
+                  borderSide:
+                      BorderSide(color: borderColor, width: borderWidth),
+                ),
+          enabledBorder: isDisabeldBoarder
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(borderRadius ?? 0),
+                  borderSide:
+                      BorderSide(color: borderColor, width: borderWidth),
+                ),
+          focusedBorder: isDisabeldBoarder
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(borderRadius ?? 0),
+                  borderSide:
+                      BorderSide(color: borderColor, width: borderWidth),
+                ),
         ),
         onChanged: onChanged,
       ),

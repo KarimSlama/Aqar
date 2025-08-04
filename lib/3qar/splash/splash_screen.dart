@@ -1,3 +1,4 @@
+import 'package:aqar/core/constants/constants.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -53,8 +54,19 @@ class SplashScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(200, 50),
                       ),
-                      onPressed: () =>
-                          context.pushNamed(Routes.onboardingScreen),
+                      onPressed: () {
+                        if (isLoggedUser) {
+                          context.pushNamedAndRemoveUntil(
+                            Routes.buyerNavigationMenu,
+                            predicate: (route) => false,
+                          );
+                        } else {
+                          context.pushNamedAndRemoveUntil(
+                            Routes.onboardingScreen,
+                            predicate: (route) => false,
+                          );
+                        }
+                      },
                       child: Text(AqarString.letsStarted),
                     ),
                     Text(

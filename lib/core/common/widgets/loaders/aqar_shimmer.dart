@@ -4,10 +4,10 @@ import 'package:shimmer/shimmer.dart';
 import '../../../constants/aqar_colors.dart';
 import '../../../helpers/helper_functions.dart';
 
-class QafShimmerEffect extends StatelessWidget {
+class AqarShimmerEffect extends StatelessWidget {
   final double width, height, radius;
   final Color? color;
-  const QafShimmerEffect(
+  const AqarShimmerEffect(
       {super.key,
       required this.width,
       required this.height,

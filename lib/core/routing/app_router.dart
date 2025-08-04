@@ -1,3 +1,6 @@
+import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/buyer_navigation_menu.dart';
+import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
 import 'package:aqar/3qar/login_option/login_option_screen.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
 import 'package:aqar/3qar/splash/splash_screen.dart';
@@ -44,6 +47,23 @@ class AppRouter {
             child: SignUpScreen(),
           ),
         );
+
+      case Routes.buyerNavigationMenu:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<BuyerNavigationCubit>(),
+            child: BuyerNavigationMenu(),
+          ),
+        );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+        );
+
+      // case Routes.allUnitsScreen:
+      //   return MaterialPageRoute(
+      //     builder: (_) => AllUnitsScreen(),
+      //   );
 
       default:
         return null;
