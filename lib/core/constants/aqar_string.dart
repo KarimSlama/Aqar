@@ -40,4 +40,10 @@ class AqarString {
       'You joinded 3qar successfully!';
   static const String getReadyToFeelConfidentWithANewAqar =
       'Get Ready to feel confident with a new Aqar';
+  static const String error = 'Error';
+  static const String seeAll = 'See all';
+  static const String exploreByLocation = 'Explore by Location';
+  static const String recommendedForYou = 'Recommended for you';
+  static const String recommended = 'Recommended';
+  static const String search = 'search';
 }

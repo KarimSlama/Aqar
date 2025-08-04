@@ -12,7 +12,7 @@ class AqarColors {
   static const Color black = Color(0xff1C1C1C);
 
   static const Color light = Color(0xffDFDFDF);
-  static const Color grey = Color(0xffA1A5C1);
+  static const Color grey = Color(0xFF8D8D8D);
   static const Color silver = Color(0xffE9E9E9);
   static const Color white = Color(0xffFFFFFF);
   static const List<Color> linear = [Color(0xFF6B73FF), Color(0xFF000DFF)];
