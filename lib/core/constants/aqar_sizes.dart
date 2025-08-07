@@ -67,4 +67,5 @@ class AqarSizes {
 
   /// Grid View Spacing
   static double gridViewSpacing = 16;
+  static double gridViewLgSpacing = 32;
 }

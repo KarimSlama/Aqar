@@ -1,4 +1,4 @@
-import 'package:aqar/3qar/buyer_app/home/data/model/property_request_model.dart';
+import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'unit_request_model.g.dart';
 
@@ -12,7 +12,7 @@ class UnitRequestModel {
   final DateTime? createdAt;
   final String image;
 
-  final List<PropertyRequestModel>? properties;
+  final List<PropertyDetailsModel>? properties;
 
   const UnitRequestModel({
     this.id,

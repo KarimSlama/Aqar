@@ -7,7 +7,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/constants/aqar_colors.dart';
 import '../../../../core/constants/aqar_sizes.dart';
-import '../../row/row_icon_with_title.dart';
+import '../../../../core/common/widgets/row/row_icon_with_title.dart';
 
 class UnitBuildingCardItem extends StatelessWidget {
   final UnitRequestModel unit;

@@ -29,7 +29,7 @@ class Loaders {
             ),
           ],
         ),
-        backgroundColor: AqarColors.darkBlue,
+        backgroundColor: AqarColors.blue,
         duration: Duration(seconds: duration),
         margin: const EdgeInsets.all(10),
         behavior: SnackBarBehavior.floating,

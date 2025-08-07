@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
             ),
             Positioned.fill(
               child: Container(
-                color: AqarColors.darkBlue.withValues(alpha: .4),
+                color: AqarColors.blue.withValues(alpha: .4),
               ),
             ),
             Positioned.fill(

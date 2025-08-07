@@ -1,7 +1,8 @@
 import 'package:aqar/3qar/buyer_app/home/data/model/home_enum.dart';
-import 'package:aqar/3qar/buyer_app/home/data/model/property_request_model.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/unit_request_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../data/model/property_details_model.dart';
 
 part 'home_state.freezed.dart';
 
@@ -13,7 +14,7 @@ class HomeState with _$HomeState {
     PageViewState? pageChanged,
     @Default(0) int currentIndex,
     @Default([]) List<UnitRequestModel> unitsData,
-    @Default([]) List<PropertyRequestModel> propertiesData,
+    @Default([]) List<PropertyDetailsModel> propertiesData,
     String? errorMessage,
   }) = _HomeState;
 }

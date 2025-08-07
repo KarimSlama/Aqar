@@ -4,6 +4,9 @@ import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service_impl.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/properties_repository.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/units_repository.dart';
+import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
+import 'package:aqar/3qar/buyer_app/property_rating/data/network/rating_service.dart';
+import 'package:aqar/3qar/buyer_app/property_rating/data/repository/rating_repository.dart';
 import 'package:aqar/3qar/login/controller/login_cubit.dart';
 import 'package:aqar/3qar/login/data/repository/login_repository.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
@@ -12,6 +15,7 @@ import 'package:aqar/core/network/register/register_service.dart';
 import 'package:aqar/core/network/register/register_service_impl.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../3qar/buyer_app/property_rating/data/network/rating_service_impl.dart';
 import '../network/users/user_service.dart';
 import '../network/users/user_service_impl.dart';
 
@@ -25,6 +29,8 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<UserService>(() => UserServiceImpl());
 
   getIt.registerLazySingleton<PropertyService>(() => PropertyServiceImpl());
+
+  getIt.registerLazySingleton<RatingService>(() => RatingServiceImpl());
 
   /// LOGIN
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
@@ -43,4 +49,9 @@ Future<void> setupServiceLocator() async {
       () => PropertiesRepository(getIt()));
   getIt.registerLazySingleton<UnitsRepository>(() => UnitsRepository(getIt()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt(), getIt()));
+
+  /// RATINGS
+  getIt
+      .registerLazySingleton<RatingRepository>(() => RatingRepository(getIt()));
+  getIt.registerLazySingleton<RatingCubit>(() => RatingCubit(getIt()));
 }

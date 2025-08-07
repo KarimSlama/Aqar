@@ -1,4 +1,4 @@
-import 'package:aqar/3qar/buyer_app/home/data/model/property_request_model.dart';
+import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/core/constants/aqar_colors.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/core/helpers/helper_functions.dart';
@@ -9,7 +9,7 @@ import '../../../../core/common/widgets/container/rounded_container.dart';
 import '../../../../core/common/widgets/images/cached_images.dart';
 
 class RecommendedForYouItemCard extends StatelessWidget {
-  final PropertyRequestModel property;
+  final PropertyDetailsModel property;
   final int index;
   const RecommendedForYouItemCard(
       {super.key, required this.property, required this.index});
@@ -24,9 +24,9 @@ class RecommendedForYouItemCard extends StatelessWidget {
           children: [
             SizedBox(
                 height: AqarHelperFunctions.screenHeight(context),
-                width: AqarHelperFunctions.screenWidth(context),
+                width: AqarHelperFunctions.screenWidth(context) / 1.2,
                 child: CachedImage(
-                  image: property.imageUrls[0],
+                  image: property.propertyImages[0].imageUrl,
                 )),
             Positioned(
               top: 8,
@@ -39,14 +39,16 @@ class RecommendedForYouItemCard extends StatelessWidget {
                     width: 100,
                     child: RoundedContainer(
                       text: property.propertyName,
+                      padding: EdgeInsetsDirectional.all(AqarSizes.sm),
                       isText: true,
                       maxLines: 1,
                       textColor: AqarColors.white,
                     ),
                   ),
                   RoundedContainer(
-                    icon: Iconsax.heart_copy,
+                    padding: EdgeInsetsDirectional.all(AqarSizes.sm),
                     isText: false,
+                    child: Icon(Iconsax.heart_copy),
                   ),
                 ],
               ),

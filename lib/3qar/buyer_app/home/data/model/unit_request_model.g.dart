@@ -16,7 +16,7 @@ UnitRequestModel _$UnitRequestModelFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['created_at'] as String),
       image: json['image'] as String,
       properties: (json['properties'] as List<dynamic>?)
-          ?.map((e) => PropertyRequestModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => PropertyDetailsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

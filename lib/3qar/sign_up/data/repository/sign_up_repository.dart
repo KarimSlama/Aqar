@@ -24,7 +24,7 @@ class SignUpRepository {
 
         if (Supabase.instance.client.auth.currentUser == null) {
           await _registerService.login(LoginRequestBody(
-              email: userModel.email, password: userModel.password!));
+              email: userModel.email!, password: userModel.password!));
         }
 
         final profileResult = await _userService.createUser(updatedUser);
