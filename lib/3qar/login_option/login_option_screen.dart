@@ -38,7 +38,7 @@ class LoginOptionScreen extends StatelessWidget {
                   actionTextStyle: Theme.of(context)
                       .textTheme
                       .headlineMedium!
-                      .apply(color: AqarColors.darkBlue),
+                      .apply(color: AqarColors.blue),
                   textStyle: Theme.of(context).textTheme.headlineMedium),
               SizedBox(height: AqarSizes.spaceBtwItems),
               ContinueWithEmailLogin(),

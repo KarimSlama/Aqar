@@ -1,4 +1,4 @@
-import 'package:aqar/3qar/buyer_app/home/data/model/property_request_model.dart';
+import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/core/network/server_result.dart';
 
@@ -7,7 +7,7 @@ class PropertiesRepository {
 
   PropertiesRepository(this._propertyService);
 
-  Future<ServerResult<List<PropertyRequestModel>>> fetchProperties() async {
+  Future<ServerResult<List<PropertyDetailsModel>>> fetchProperties() async {
     try {
       return await _propertyService.getProperties();
     } catch (error) {

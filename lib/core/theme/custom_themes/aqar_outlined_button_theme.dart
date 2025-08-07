@@ -8,8 +8,8 @@ class AqarOutlinedButtonTheme {
       OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: AqarColors.darkBlue,
-      side: BorderSide(color: AqarColors.darkBlue),
+      foregroundColor: AqarColors.blue,
+      side: BorderSide(color: AqarColors.blue),
       textStyle: TextStyle(
           fontSize: 16, color: AqarColors.white, fontWeight: FontWeight.w600),
       padding: EdgeInsetsDirectional.symmetric(vertical: 16, horizontal: 20),
@@ -23,7 +23,7 @@ class AqarOutlinedButtonTheme {
     style: OutlinedButton.styleFrom(
       elevation: 0,
       foregroundColor: AqarColors.white,
-      side: BorderSide(color: AqarColors.darkBlue),
+      side: BorderSide(color: AqarColors.blue),
       textStyle: TextStyle(
           fontSize: 16, color: AqarColors.white, fontWeight: FontWeight.w600),
       padding: EdgeInsetsDirectional.symmetric(vertical: 16, horizontal: 20),

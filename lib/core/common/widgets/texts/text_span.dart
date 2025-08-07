@@ -35,11 +35,11 @@ class SpanText extends StatelessWidget {
             text: actionText,
             style: isSmall
                 ? Theme.of(context).textTheme.bodyMedium!.apply(
-                      color: AqarColors.darkBlue,
+                      color: AqarColors.blue,
                     )
                 : actionTextStyle ??
                     Theme.of(context).textTheme.titleMedium!.apply(
-                          color: AqarColors.darkBlue,
+                          color: AqarColors.blue,
                         ),
           ),
           if (isActionCenter)

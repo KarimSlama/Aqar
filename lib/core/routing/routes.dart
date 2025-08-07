@@ -6,5 +6,7 @@ class Routes {
   static const String signUpScreen = '/signUpScreen';
   static const String buyerNavigationMenu = '/buyerNavigationMenu';
   static const String homeScreen = '/homeScreen';
+  static const String propertyDetailsScreen = '/propertyDetailsScreen';
+  static const String propertyRatingScreen = '/propertyRatingScreen';
   static const String allUnitsScreen = '/allUnitsScreen';
 }

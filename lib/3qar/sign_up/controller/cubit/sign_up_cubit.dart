@@ -28,7 +28,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       firstName: firstNameController.text.trim(),
       lastName: lastNameController.text.trim(),
       phone: phoneController.text.trim(),
-      profilePicture: '',
+      image: '',
       userType: userType,
       password: passwordController.text.trim(),
       email: emailController.text.trim(),

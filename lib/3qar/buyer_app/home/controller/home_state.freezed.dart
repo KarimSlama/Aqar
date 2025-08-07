@@ -18,14 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   HomeDataState get propertyStatus => throw _privateConstructorUsedError;
   HomeDataState get unitsStatus => throw _privateConstructorUsedError;
-  HomeDataState get filterPropertyByPriceStatus =>
-      throw _privateConstructorUsedError;
   PageViewState? get pageChanged => throw _privateConstructorUsedError;
   int get currentIndex => throw _privateConstructorUsedError;
   List<UnitRequestModel> get unitsData => throw _privateConstructorUsedError;
-  List<PropertyRequestModel> get propertiesData =>
-      throw _privateConstructorUsedError;
-  List<PropertyRequestModel> get filteringPropertiesByPriceData =>
+  List<PropertyDetailsModel> get propertiesData =>
       throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -44,12 +40,10 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {HomeDataState propertyStatus,
       HomeDataState unitsStatus,
-      HomeDataState filterPropertyByPriceStatus,
       PageViewState? pageChanged,
       int currentIndex,
       List<UnitRequestModel> unitsData,
-      List<PropertyRequestModel> propertiesData,
-      List<PropertyRequestModel> filteringPropertiesByPriceData,
+      List<PropertyDetailsModel> propertiesData,
       String? errorMessage});
 }
 
@@ -70,12 +64,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? propertyStatus = null,
     Object? unitsStatus = null,
-    Object? filterPropertyByPriceStatus = null,
     Object? pageChanged = freezed,
     Object? currentIndex = null,
     Object? unitsData = null,
     Object? propertiesData = null,
-    Object? filteringPropertiesByPriceData = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -86,10 +78,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       unitsStatus: null == unitsStatus
           ? _value.unitsStatus
           : unitsStatus // ignore: cast_nullable_to_non_nullable
-              as HomeDataState,
-      filterPropertyByPriceStatus: null == filterPropertyByPriceStatus
-          ? _value.filterPropertyByPriceStatus
-          : filterPropertyByPriceStatus // ignore: cast_nullable_to_non_nullable
               as HomeDataState,
       pageChanged: freezed == pageChanged
           ? _value.pageChanged
@@ -106,11 +94,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       propertiesData: null == propertiesData
           ? _value.propertiesData
           : propertiesData // ignore: cast_nullable_to_non_nullable
-              as List<PropertyRequestModel>,
-      filteringPropertiesByPriceData: null == filteringPropertiesByPriceData
-          ? _value.filteringPropertiesByPriceData
-          : filteringPropertiesByPriceData // ignore: cast_nullable_to_non_nullable
-              as List<PropertyRequestModel>,
+              as List<PropertyDetailsModel>,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -130,12 +114,10 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   $Res call(
       {HomeDataState propertyStatus,
       HomeDataState unitsStatus,
-      HomeDataState filterPropertyByPriceStatus,
       PageViewState? pageChanged,
       int currentIndex,
       List<UnitRequestModel> unitsData,
-      List<PropertyRequestModel> propertiesData,
-      List<PropertyRequestModel> filteringPropertiesByPriceData,
+      List<PropertyDetailsModel> propertiesData,
       String? errorMessage});
 }
 
@@ -154,12 +136,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? propertyStatus = null,
     Object? unitsStatus = null,
-    Object? filterPropertyByPriceStatus = null,
     Object? pageChanged = freezed,
     Object? currentIndex = null,
     Object? unitsData = null,
     Object? propertiesData = null,
-    Object? filteringPropertiesByPriceData = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$HomeStateImpl(
@@ -170,10 +150,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       unitsStatus: null == unitsStatus
           ? _value.unitsStatus
           : unitsStatus // ignore: cast_nullable_to_non_nullable
-              as HomeDataState,
-      filterPropertyByPriceStatus: null == filterPropertyByPriceStatus
-          ? _value.filterPropertyByPriceStatus
-          : filterPropertyByPriceStatus // ignore: cast_nullable_to_non_nullable
               as HomeDataState,
       pageChanged: freezed == pageChanged
           ? _value.pageChanged
@@ -190,11 +166,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       propertiesData: null == propertiesData
           ? _value._propertiesData
           : propertiesData // ignore: cast_nullable_to_non_nullable
-              as List<PropertyRequestModel>,
-      filteringPropertiesByPriceData: null == filteringPropertiesByPriceData
-          ? _value._filteringPropertiesByPriceData
-          : filteringPropertiesByPriceData // ignore: cast_nullable_to_non_nullable
-              as List<PropertyRequestModel>,
+              as List<PropertyDetailsModel>,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -209,17 +181,13 @@ class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
       {this.propertyStatus = HomeDataState.loading,
       this.unitsStatus = HomeDataState.loading,
-      this.filterPropertyByPriceStatus = HomeDataState.loading,
       this.pageChanged,
       this.currentIndex = 0,
       final List<UnitRequestModel> unitsData = const [],
-      final List<PropertyRequestModel> propertiesData = const [],
-      final List<PropertyRequestModel> filteringPropertiesByPriceData =
-          const [],
+      final List<PropertyDetailsModel> propertiesData = const [],
       this.errorMessage})
       : _unitsData = unitsData,
-        _propertiesData = propertiesData,
-        _filteringPropertiesByPriceData = filteringPropertiesByPriceData;
+        _propertiesData = propertiesData;
 
   @override
   @JsonKey()
@@ -227,9 +195,6 @@ class _$HomeStateImpl implements _HomeState {
   @override
   @JsonKey()
   final HomeDataState unitsStatus;
-  @override
-  @JsonKey()
-  final HomeDataState filterPropertyByPriceStatus;
   @override
   final PageViewState? pageChanged;
   @override
@@ -244,23 +209,13 @@ class _$HomeStateImpl implements _HomeState {
     return EqualUnmodifiableListView(_unitsData);
   }
 
-  final List<PropertyRequestModel> _propertiesData;
+  final List<PropertyDetailsModel> _propertiesData;
   @override
   @JsonKey()
-  List<PropertyRequestModel> get propertiesData {
+  List<PropertyDetailsModel> get propertiesData {
     if (_propertiesData is EqualUnmodifiableListView) return _propertiesData;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_propertiesData);
-  }
-
-  final List<PropertyRequestModel> _filteringPropertiesByPriceData;
-  @override
-  @JsonKey()
-  List<PropertyRequestModel> get filteringPropertiesByPriceData {
-    if (_filteringPropertiesByPriceData is EqualUnmodifiableListView)
-      return _filteringPropertiesByPriceData;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_filteringPropertiesByPriceData);
   }
 
   @override
@@ -268,7 +223,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(propertyStatus: $propertyStatus, unitsStatus: $unitsStatus, filterPropertyByPriceStatus: $filterPropertyByPriceStatus, pageChanged: $pageChanged, currentIndex: $currentIndex, unitsData: $unitsData, propertiesData: $propertiesData, filteringPropertiesByPriceData: $filteringPropertiesByPriceData, errorMessage: $errorMessage)';
+    return 'HomeState(propertyStatus: $propertyStatus, unitsStatus: $unitsStatus, pageChanged: $pageChanged, currentIndex: $currentIndex, unitsData: $unitsData, propertiesData: $propertiesData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -280,10 +235,6 @@ class _$HomeStateImpl implements _HomeState {
                 other.propertyStatus == propertyStatus) &&
             (identical(other.unitsStatus, unitsStatus) ||
                 other.unitsStatus == unitsStatus) &&
-            (identical(other.filterPropertyByPriceStatus,
-                    filterPropertyByPriceStatus) ||
-                other.filterPropertyByPriceStatus ==
-                    filterPropertyByPriceStatus) &&
             (identical(other.pageChanged, pageChanged) ||
                 other.pageChanged == pageChanged) &&
             (identical(other.currentIndex, currentIndex) ||
@@ -292,9 +243,6 @@ class _$HomeStateImpl implements _HomeState {
                 .equals(other._unitsData, _unitsData) &&
             const DeepCollectionEquality()
                 .equals(other._propertiesData, _propertiesData) &&
-            const DeepCollectionEquality().equals(
-                other._filteringPropertiesByPriceData,
-                _filteringPropertiesByPriceData) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
@@ -304,12 +252,10 @@ class _$HomeStateImpl implements _HomeState {
       runtimeType,
       propertyStatus,
       unitsStatus,
-      filterPropertyByPriceStatus,
       pageChanged,
       currentIndex,
       const DeepCollectionEquality().hash(_unitsData),
       const DeepCollectionEquality().hash(_propertiesData),
-      const DeepCollectionEquality().hash(_filteringPropertiesByPriceData),
       errorMessage);
 
   /// Create a copy of HomeState
@@ -325,12 +271,10 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {final HomeDataState propertyStatus,
       final HomeDataState unitsStatus,
-      final HomeDataState filterPropertyByPriceStatus,
       final PageViewState? pageChanged,
       final int currentIndex,
       final List<UnitRequestModel> unitsData,
-      final List<PropertyRequestModel> propertiesData,
-      final List<PropertyRequestModel> filteringPropertiesByPriceData,
+      final List<PropertyDetailsModel> propertiesData,
       final String? errorMessage}) = _$HomeStateImpl;
 
   @override
@@ -338,17 +282,13 @@ abstract class _HomeState implements HomeState {
   @override
   HomeDataState get unitsStatus;
   @override
-  HomeDataState get filterPropertyByPriceStatus;
-  @override
   PageViewState? get pageChanged;
   @override
   int get currentIndex;
   @override
   List<UnitRequestModel> get unitsData;
   @override
-  List<PropertyRequestModel> get propertiesData;
-  @override
-  List<PropertyRequestModel> get filteringPropertiesByPriceData;
+  List<PropertyDetailsModel> get propertiesData;
   @override
   String? get errorMessage;
 

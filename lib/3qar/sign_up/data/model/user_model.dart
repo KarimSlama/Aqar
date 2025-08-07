@@ -1,20 +1,29 @@
-import '../../../../core/formatters/aqar_formatters.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+import '../../../../core/formatters/aqar_formatters.dart';
+part 'user_model.g.dart';
+
+@JsonSerializable()
 class UserModel {
   final String? id;
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String phone;
+  @JsonKey(name: 'first_name')
+  final String? firstName;
+  @JsonKey(name: 'last_name')
+  final String? lastName;
+  final String? email;
+  final String? phone;
   final String? password;
-  final String? profilePicture;
-  final String userType;
+
+  final String? image;
+
+  @JsonKey(name: 'user_type')
+  final String? userType;
 
   const UserModel({
     required this.firstName,
     required this.lastName,
     required this.phone,
-    required this.profilePicture,
+    required this.image,
     required this.userType,
     this.id,
     this.password,
@@ -30,7 +39,7 @@ class UserModel {
     String? phone,
     String? password,
     String? userType,
-    String? profilePicture,
+    String? image,
   }) {
     return UserModel(
       id: id ?? this.id,
@@ -39,35 +48,27 @@ class UserModel {
       email: email ?? this.email,
       phone: phone ?? this.phone,
       password: password ?? this.password,
-      profilePicture: profilePicture ?? this.profilePicture,
+      image: image ?? this.image,
       userType: userType ?? this.userType,
     );
   }
 
   String get fullName => '$firstName $lastName';
 
-  String get formatedPhone => AqarFormaters.formatPhoneNumber(phone);
+  String get formatedPhone => AqarFormaters.formatPhoneNumber(phone!);
 
   static UserModel empty() => UserModel(
       firstName: '',
       lastName: '',
       phone: '',
-      profilePicture: '',
+      image: '',
       id: '',
       password: '',
       email: '',
       userType: '');
 
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'first_name': firstName,
-      'last_name': lastName,
-      'full_name': fullName,
-      'email': email,
-      'phone': phone,
-      'user_type': userType,
-      'image': profilePicture ?? '',
-    };
-  }
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }

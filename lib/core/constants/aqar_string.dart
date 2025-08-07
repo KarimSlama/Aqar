@@ -46,4 +46,28 @@ class AqarString {
   static const String recommendedForYou = 'Recommended for you';
   static const String recommended = 'Recommended';
   static const String search = 'search';
+  static const String propertyPhotos = 'Property Photos';
+  static const String aboutProperty = 'About Property';
+  static const String propertyDetails = 'Property Details';
+  static const String propertyRating = 'Property Rating';
+  static const String luxuryProperty = 'Luxury Property';
+  static const String paymentPlans = 'Payment Plans';
+  static const String installment = 'Installment';
+  static const String downPayment = 'Down Payment';
+  static const String referenceNo = 'Reference no.';
+  static const String bedroomsNo = 'Bedrooms no.';
+  static const String bedrooms = 'Bedrooms';
+  static const String bathrooms = 'Bathrooms';
+  static const String area = 'Area (in Sqft)';
+  static const String bathroomsNo = 'Bathrooms no.';
+  static const String deliveryIn = 'Delivery in';
+  static const String buildInYear = 'Build in Year';
+  static const String livingRoom = 'Living Room';
+  static const String saleType = 'Sale Type';
+  static const String finishing = 'Finishing';
+  static const String price = 'Price';
+  static const String noRatingYet = 'No Rating yet';
+  static const String
+      ratingsAndReviewsAreVerifiedAndFromPeopleWhoUseTheSameTypeOfDeviceThatYouUse =
+      'Ratings and Reviews are verified and from People Who Use the same type of Device That you use';
 }

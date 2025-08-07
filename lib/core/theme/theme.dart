@@ -21,7 +21,7 @@ class AqarTheme {
       extensions: <ThemeExtension>[
         AppColors(
           primary: AqarColors.blue,
-          secondary: AqarColors.darkBlue,
+          secondary: AqarColors.blue,
         )
       ],
       scaffoldBackgroundColor: Colors.white,
@@ -41,7 +41,7 @@ class AqarTheme {
       extensions: <ThemeExtension>[
         AppColors(
           primary: AqarColors.blue,
-          secondary: AqarColors.darkBlue,
+          secondary: AqarColors.blue,
         )
       ],
       scaffoldBackgroundColor: Colors.black,

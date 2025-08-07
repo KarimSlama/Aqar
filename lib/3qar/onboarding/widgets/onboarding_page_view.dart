@@ -78,7 +78,7 @@ class _OnboardingPageViewState extends State<OnboardingPageView>
               textStyle: Theme.of(context).textTheme.headlineSmall,
               actionTextStyle:
                   Theme.of(context).textTheme.headlineMedium!.apply(
-                        color: AqarColors.darkBlue,
+                        color: AqarColors.blue,
                       ),
             ),
             Text(

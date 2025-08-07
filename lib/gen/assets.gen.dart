@@ -34,6 +34,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/empty.json
+  String get empty => 'assets/images/empty.json';
+
   /// File path: assets/images/house.png
   AssetGenImage get house => const AssetGenImage('assets/images/house.png');
 
@@ -75,6 +78,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    empty,
     house,
     house2,
     house3,

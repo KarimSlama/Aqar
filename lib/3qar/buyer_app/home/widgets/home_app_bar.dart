@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/constants/aqar_sizes.dart';
-import '../../row/row_icon_with_title.dart';
+import '../../../../core/common/widgets/row/row_icon_with_title.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
