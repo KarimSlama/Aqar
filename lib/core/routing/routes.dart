@@ -9,4 +9,6 @@ class Routes {
   static const String propertyDetailsScreen = '/propertyDetailsScreen';
   static const String propertyRatingScreen = '/propertyRatingScreen';
   static const String allUnitsScreen = '/allUnitsScreen';
+  static const String recommendedForYouAllPropertiesScreen =
+      '/recommendedForYouAllPropertiesScreen';
 }

@@ -4,7 +4,6 @@ part 'property_feature_model.g.dart';
 
 @JsonSerializable()
 class PropertyFeatureModel {
-  @JsonKey(name: 'feature')
   final String feature;
 
   const PropertyFeatureModel({required this.feature});

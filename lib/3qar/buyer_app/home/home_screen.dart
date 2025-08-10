@@ -1,8 +1,12 @@
+import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/widgets/recommended_page_view_property.dart';
 import 'package:aqar/core/common/widgets/texts/section_heading.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
+import 'package:aqar/core/helpers/extensions.dart';
+import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'widgets/unit_building_list_of_cards.dart';
 import 'widgets/categories_list_buttons.dart';
 import 'widgets/filter_home_screen_container.dart';
@@ -36,7 +40,9 @@ class HomeScreen extends StatelessWidget {
               const UnitBuildingListOfCards(),
               SectionHeading(
                 text: AqarString.recommendedForYou,
-                onPressed: () {},
+                onPressed: () => context.pushNamed(
+                    Routes.recommendedForYouAllPropertiesScreen,
+                    arguments: context.read<HomeCubit>().propertiesList),
               ),
               const RecommendedForYouListOfCards(),
             ],

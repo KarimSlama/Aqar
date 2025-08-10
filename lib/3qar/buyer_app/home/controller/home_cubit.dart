@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:aqar/3qar/buyer_app/home/controller/home_state.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/home_enum.dart';
+import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/unit_request_model.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/properties_repository.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/units_repository.dart';
@@ -17,6 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   List<UnitRequestModel> unitsList = [];
+  List<PropertyDetailsModel> propertiesList = [];
 
   final PageController pageController = PageController();
   Timer? timer;
@@ -51,6 +53,7 @@ class HomeCubit extends Cubit<HomeState> {
     final properties = await propertyRepository.fetchProperties();
 
     properties.when(success: (property) {
+      propertiesList = property;
       emit(state.copyWith(
           propertiesData: property, propertyStatus: HomeDataState.success));
     }, failure: (error) {

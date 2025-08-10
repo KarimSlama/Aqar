@@ -1,9 +1,12 @@
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/buyer_navigation_menu.dart';
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
+import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_details/property_details_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
+import 'package:aqar/3qar/buyer_app/recommended_for_you_all_properties/recommended_for_you_all_properties_screen.dart';
 import 'package:aqar/3qar/login_option/login_option_screen.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
 import 'package:aqar/3qar/splash/splash_screen.dart';
@@ -11,6 +14,7 @@ import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../3qar/buyer_app/home/controller/home_cubit.dart';
 import '../../3qar/buyer_app/property_details/data/model/property_args.dart';
 import '../../3qar/login/controller/login_cubit.dart';
 import '../../3qar/login/login_screen.dart';
@@ -54,8 +58,20 @@ class AppRouter {
 
       case Routes.buyerNavigationMenu:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<BuyerNavigationCubit>(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<BuyerNavigationCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<HomeCubit>()
+                  ..fetchProperties()
+                  ..fetchUnits(),
+              ),
+              BlocProvider(create: (context) => getIt<FavoritesCubit>()
+                  // ..fetchAllFavorites(),
+                  ),
+            ],
             child: BuyerNavigationMenu(),
           ),
         );
@@ -68,7 +84,10 @@ class AppRouter {
         final property = settings.arguments as PropertyArgs;
 
         return MaterialPageRoute(
-          builder: (_) => PropertyDetailsScreen(args: property),
+          builder: (_) => BlocProvider.value(
+            value: getIt<FavoritesCubit>(),
+            child: PropertyDetailsScreen(args: property),
+          ),
         );
 
       case Routes.propertyRatingScreen:
@@ -78,6 +97,16 @@ class AppRouter {
             create: (context) => getIt<RatingCubit>()
               ..fetchRatingsSummaryRelatedToPropertyId(propertyId),
             child: PropertyRatingScreen(propertyId: propertyId),
+          ),
+        );
+
+      case Routes.recommendedForYouAllPropertiesScreen:
+        final properties = settings.arguments as List<PropertyDetailsModel>;
+
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: getIt<FavoritesCubit>(),
+            child: RecommendedForYouAllPropertiesScreen(properties: properties),
           ),
         );
 

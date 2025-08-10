@@ -23,7 +23,6 @@ class PropertyServiceImpl implements PropertyService {
           .map<PropertyDetailsModel>(
               (properity) => PropertyDetailsModel.fromJson(properity))
           .toList();
-
       return ServerResult.success(properties);
     } catch (error) {
       return ServerResult.failure(error.toString());

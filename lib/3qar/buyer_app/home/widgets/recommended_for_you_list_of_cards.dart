@@ -3,10 +3,13 @@ import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/controller/home_state.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/home_enum.dart';
 import 'package:aqar/core/common/widgets/loaders/recommended_property_shimmer.dart';
+import 'package:aqar/core/helpers/extensions.dart';
 import 'package:aqar/core/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/routing/routes.dart';
+import '../../property_details/data/model/property_args.dart';
 import 'recommended_for_you_item_card.dart';
 
 class RecommendedForYouListOfCards extends StatelessWidget {
@@ -34,7 +37,16 @@ class RecommendedForYouListOfCards extends StatelessWidget {
                   itemCount: limitedProperties.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (_, index) => RecommendedForYouItemCard(
-                      property: limitedProperties[index], index: index),
+                    propertyId: limitedProperties[index].id,
+                    onTap: () => context.pushNamed(Routes.propertyDetailsScreen,
+                        arguments: PropertyArgs(
+                            property: limitedProperties[index],
+                            imageTag:
+                                'hero_image_tag_${limitedProperties[index].id}')),
+                    propertyImage:
+                        limitedProperties[index].propertyImages[0].imageUrl,
+                    propertyName: limitedProperties[index].propertyName,
+                  ),
                 ),
               ),
             );

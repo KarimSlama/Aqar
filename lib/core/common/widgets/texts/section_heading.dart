@@ -1,3 +1,4 @@
+import 'package:aqar/core/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/aqar_string.dart';
@@ -24,14 +25,17 @@ class SectionHeading extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          text,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .apply(color: textColor),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        SizedBox(
+          width: AqarHelperFunctions.screenWidth(context) / 1.4,
+          child: Text(
+            text,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .apply(color: textColor),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
         if (isActionButton)
           TextButton(onPressed: onPressed, child: Text(buttonText)),
