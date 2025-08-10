@@ -11,26 +11,28 @@ class BuyerNavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navCubit = context.read<BuyerNavigationCubit>();
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: BlocBuilder<BuyerNavigationCubit, BuyerNavigationState>(
-            builder: (context, state) {
-              return navCubit.screens[navCubit.currentIndex];
-            },
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: BlocBuilder<BuyerNavigationCubit, BuyerNavigationState>(
+              builder: (context, state) {
+                return navCubit.screens[navCubit.currentIndex];
+              },
+            ),
           ),
-        ),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: 24,
-          child: BuyerCustomBottomNavBar(
-            onTap: (index) {
-              navCubit.changeNavigationScreen(index);
-            },
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 24,
+            child: BuyerCustomBottomNavBar(
+              onTap: (index) {
+                navCubit.changeNavigationScreen(index);
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

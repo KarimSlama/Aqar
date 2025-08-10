@@ -1,4 +1,5 @@
 import 'package:aqar/3qar/buyer_app/property_details/data/model/property_args.dart';
+import 'package:aqar/core/common/widgets/circulars/circular_container_with_shadow.dart';
 import 'package:aqar/core/common/widgets/images/cached_images.dart';
 import 'package:aqar/core/common/widgets/texts/section_heading.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
@@ -59,6 +60,19 @@ class PropertyDetailsScreen extends StatelessWidget {
               SectionHeading(
                   text: '${AqarString.price}: ${args.property.price} AED',
                   isActionButton: false),
+              Wrap(
+                children: List.generate(args.property.propertyFeatures.length,
+                    (index) {
+                  return Padding(
+                    padding: const EdgeInsetsDirectional.symmetric(
+                        horizontal: AqarSizes.sm),
+                    child: CircularContainerShadow(
+                        padding: AqarSizes.md,
+                        widget: Text(
+                            args.property.propertyFeatures[index].feature)),
+                  );
+                }),
+              ),
               SectionHeading(
                   text: AqarString.propertyPhotos, isActionButton: false),
               PropertyPhotos(images: args.property.propertyImages),

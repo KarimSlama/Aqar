@@ -42,7 +42,7 @@ class IconsHeadingWithTextAndPriceInMonth extends StatelessWidget {
                 child: RatingCircularContainerWithTextAndIcon(
                     ratingText: rating, propertyId: propertyId),
               ),
-              FavoriteIcon(propertyId: '$propertyId'),
+              FavoriteIcon(propertyId: propertyId),
             ],
           ),
           SizedBox(

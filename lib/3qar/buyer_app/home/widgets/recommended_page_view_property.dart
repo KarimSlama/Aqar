@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../controller/home_state.dart';
 import '../data/model/home_enum.dart';
-import 'page_view_property_card.dart';
+import 'property_card.dart';
 
 class RecommendedPageViewProperty extends StatelessWidget {
   const RecommendedPageViewProperty({super.key});
@@ -24,7 +24,6 @@ class RecommendedPageViewProperty extends StatelessWidget {
               ..sort((a, b) => a.price.compareTo(b.price));
 
             final limitedProperties = sortedProperties.take(5).toList();
-
             return SizedBox(
               height: AqarHelperFunctions.screenHeight(context) / 2.8,
               child: PageView(
@@ -35,7 +34,7 @@ class RecommendedPageViewProperty extends StatelessWidget {
                   limitedProperties.length,
                   (index) {
                     final property = limitedProperties[index];
-                    return PageViewPropertyCard(property: property);
+                    return PropertyCard(property: property);
                   },
                 ),
               ),

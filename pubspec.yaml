@@ -13,6 +13,7 @@ dependencies:
   build_runner: ^2.4.14
   cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
+  firebase_core: ^4.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -28,6 +29,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   get_it: ^7.7.0
   iconsax_flutter: ^1.0.1
+  infinite_scroll_pagination: ^5.1.0
   intl: ^0.20.2
   json_annotation: ^4.9.0
   json_serializable: ^6.7.1

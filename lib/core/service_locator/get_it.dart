@@ -1,4 +1,5 @@
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
+import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service_impl.dart';
@@ -15,6 +16,9 @@ import 'package:aqar/core/network/register/register_service.dart';
 import 'package:aqar/core/network/register/register_service_impl.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../3qar/buyer_app/favorite/data/favorites_repository.dart';
+import '../../3qar/buyer_app/favorite/data/network/favorite_service.dart';
+import '../../3qar/buyer_app/favorite/data/network/favorite_service_impl.dart';
 import '../../3qar/buyer_app/property_rating/data/network/rating_service_impl.dart';
 import '../network/users/user_service.dart';
 import '../network/users/user_service_impl.dart';
@@ -31,6 +35,7 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<PropertyService>(() => PropertyServiceImpl());
 
   getIt.registerLazySingleton<RatingService>(() => RatingServiceImpl());
+  getIt.registerLazySingleton<FavoriteService>(() => FavoriteServiceImpl());
 
   /// LOGIN
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
@@ -53,5 +58,10 @@ Future<void> setupServiceLocator() async {
   /// RATINGS
   getIt
       .registerLazySingleton<RatingRepository>(() => RatingRepository(getIt()));
-  getIt.registerLazySingleton<RatingCubit>(() => RatingCubit(getIt()));
+  getIt.registerFactory<RatingCubit>(() => RatingCubit(getIt()));
+
+  /// FAVORITES
+  getIt.registerLazySingleton<FavoritesRepository>(
+      () => FavoritesRepository(getIt()));
+  getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt()));
 }
