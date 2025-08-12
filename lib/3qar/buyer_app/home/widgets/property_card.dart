@@ -16,9 +16,13 @@ import '../../../../core/routing/routes.dart';
 
 class PropertyCard extends StatelessWidget {
   final PropertyDetailsModel property;
+  final bool isFavNeeded, isDisplayedInRow;
+
   const PropertyCard({
     super.key,
     required this.property,
+    this.isFavNeeded = true,
+    this.isDisplayedInRow = false,
   });
 
   @override
@@ -54,10 +58,12 @@ class PropertyCard extends StatelessWidget {
                             : const Icon(Icons.image_not_supported),
                       ),
                     ),
-                    Positioned(
-                        top: 10,
-                        right: 10,
-                        child: FavoriteIcon(propertyId: property.id!)),
+                    isFavNeeded
+                        ? Positioned(
+                            top: 10,
+                            right: 10,
+                            child: FavoriteIcon(propertyId: property.id!))
+                        : SizedBox.shrink(),
                   ],
                 ),
                 Expanded(
@@ -69,27 +75,31 @@ class PropertyCard extends StatelessWidget {
                           logo: property.developer!.companyLogoUrl!,
                           propertyLocation: property.location,
                           propertyName: property.propertyName,
+                          isRow: isDisplayedInRow,
                         ),
                         const Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            RowIconWithTitle(
-                              icon: Icons.bed_outlined,
-                              text: '${property.numberOfBeds} Beds',
-                            ),
-                            HeightSeperator(),
-                            RowIconWithTitle(
-                              icon: Icons.shower,
-                              text: '${property.numberOfBathrooms} Bath',
-                            ),
-                            HeightSeperator(),
-                            RowIconWithTitle(
-                              icon: Iconsax.slider_horizontal_1_copy,
-                              text: '${property.area} m',
-                            ),
-                          ],
-                        )
+                        isDisplayedInRow
+                            ? SizedBox.shrink()
+                            : Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  RowIconWithTitle(
+                                    icon: Icons.bed_outlined,
+                                    text: '${property.numberOfBeds} Beds',
+                                  ),
+                                  HeightSeperator(),
+                                  RowIconWithTitle(
+                                    icon: Icons.shower,
+                                    text: '${property.numberOfBathrooms} Bath',
+                                  ),
+                                  HeightSeperator(),
+                                  RowIconWithTitle(
+                                    icon: Iconsax.slider_horizontal_1_copy,
+                                    text: '${property.area} m',
+                                  ),
+                                ],
+                              )
                       ],
                     ),
                   ),

@@ -62,10 +62,7 @@ class UserReviewCard extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium),
                       ],
                     ),
-                    AqarReadMoreText(
-                        text:
-                            'We truly appreciate your continuous support and trust in us. Your 5-star review brightens our day and serves as a constant reminder of why we love what we do.',
-                        lines: 2)
+                    AqarReadMoreText(text: '', lines: 2)
                   ],
                 ),
               )

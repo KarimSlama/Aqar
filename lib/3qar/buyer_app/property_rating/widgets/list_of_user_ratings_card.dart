@@ -1,4 +1,3 @@
-import 'package:aqar/3qar/buyer_app/property_rating/data/model/rating_model.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/common/widgets/card/user_review_card.dart';
 import '../../../../core/utils/rating_model_args.dart';
