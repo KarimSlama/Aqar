@@ -70,4 +70,21 @@ class AqarString {
   static const String
       ratingsAndReviewsAreVerifiedAndFromPeopleWhoUseTheSameTypeOfDeviceThatYouUse =
       'Ratings and Reviews are verified and from People Who Use the same type of Device That you use';
+  static const String logout = 'Logout';
+  static const String settings = 'Settings';
+  static const String personalInformation = 'Personal Information';
+  static const String profileDetails = 'Profile Details';
+  static const String appTheme = 'App Theme';
+  static const String aboutMe = 'About Me';
+  static const String support = 'Support';
+  static const String helpInfo = 'Help & Info';
+  static const String changeLocation = 'Change Location';
+  static const String favoritedPlaces = 'Favorited Places';
+  static const String country = 'Country';
+  static const String notSpecified = 'Not specified';
+  static const String noReviewsYet = 'No reviews yet';
+  static const String somethingWentWrong = 'Something went wrong';
+  static const String contactInformation = 'Contact Information';
+  static const String userReviews = 'User Reviews';
+  static const String save = 'Save';
 }

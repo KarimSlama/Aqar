@@ -1,14 +1,11 @@
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_state.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/model/profile_args.dart';
-import 'package:aqar/core/common/widgets/aqar_text_form_field.dart';
 import 'package:aqar/core/common/widgets/images/cached_images.dart';
 import 'package:aqar/core/common/widgets/texts/header_text_with_subtitle.dart';
 import 'package:aqar/core/common/widgets/texts/section_heading.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
+import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../core/common/widgets/row/contact_information_row.dart';
@@ -27,7 +24,7 @@ class PersonalInformationScreen extends StatelessWidget {
     final profile = profileArgs.user;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Personal Information'),
+        title: Text(AqarString.personalInformation),
         leading: IconButton(
           onPressed: () => context.pop(),
           icon: Icon(
@@ -57,16 +54,16 @@ class PersonalInformationScreen extends StatelessWidget {
                 ),
                 HeaderTextwithSubTitle(
                     title: profile.fullName,
-                    subtitle: profile.userType ?? 'Not specified',
+                    subtitle: profile.userType ?? AqarString.notSpecified,
                     isStartAligned: false),
                 const SizedBox(height: AqarSizes.sm),
                 SectionHeading(
-                    text: 'Contact Information', isActionButton: false),
+                    text: AqarString.contactInformation, isActionButton: false),
                 ContactInformationRow(
                     icon: Iconsax.call, text: profile.formatedPhone),
                 ContactInformationRow(
                     icon: Iconsax.message,
-                    text: profile.email ?? 'Not provided'),
+                    text: profile.email ?? AqarString.notSpecified),
                 const SizedBox(height: AqarSizes.sm),
                 AboutMeSectionWithTextField(profileArgs: profileArgs),
                 UserReview(
