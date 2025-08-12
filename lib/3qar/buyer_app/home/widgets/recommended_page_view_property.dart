@@ -12,8 +12,6 @@ class RecommendedPageViewProperty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<HomeCubit>();
-
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         switch (state.propertyStatus) {
@@ -27,8 +25,9 @@ class RecommendedPageViewProperty extends StatelessWidget {
             return SizedBox(
               height: AqarHelperFunctions.screenHeight(context) / 2.8,
               child: PageView(
-                controller: cubit.pageController,
-                onPageChanged: (index) => cubit.changePageViewPage(index),
+                controller: context.read<HomeCubit>().pageController,
+                onPageChanged: (index) =>
+                    context.read<HomeCubit>().changePageViewPage(index),
                 scrollDirection: Axis.horizontal,
                 children: List.generate(
                   limitedProperties.length,

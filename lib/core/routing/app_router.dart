@@ -3,6 +3,7 @@ import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navig
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
+import 'package:aqar/3qar/buyer_app/profile/data/model/profile_args.dart';
 import 'package:aqar/3qar/buyer_app/property_details/property_details_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
@@ -15,6 +16,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../3qar/buyer_app/home/controller/home_cubit.dart';
+import '../../3qar/buyer_app/personal_information/personal_information_screen.dart';
+import '../../3qar/buyer_app/profile_details/profile_details_screen.dart';
 import '../../3qar/buyer_app/property_details/data/model/property_args.dart';
 import '../../3qar/login/controller/login_cubit.dart';
 import '../../3qar/login/login_screen.dart';
@@ -108,6 +111,18 @@ class AppRouter {
             value: getIt<FavoritesCubit>(),
             child: RecommendedForYouAllPropertiesScreen(properties: properties),
           ),
+        );
+
+      case Routes.personalInformationScreen:
+        final profileArgs = settings.arguments as ProfileArgs;
+        return MaterialPageRoute(
+          builder: (_) => PersonalInformationScreen(profileArgs: profileArgs),
+        );
+
+      case Routes.profileDetailsScreen:
+        final profileArgs = settings.arguments as ProfileArgs;
+        return MaterialPageRoute(
+          builder: (_) => ProfileDetailsScreen(),
         );
 
       default:

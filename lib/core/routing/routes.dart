@@ -11,4 +11,6 @@ class Routes {
   static const String allUnitsScreen = '/allUnitsScreen';
   static const String recommendedForYouAllPropertiesScreen =
       '/recommendedForYouAllPropertiesScreen';
+  static const String personalInformationScreen = '/personalInformationScreen';
+  static const String profileDetailsScreen = '/profileDetailsScreen';
 }

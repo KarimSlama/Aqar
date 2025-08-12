@@ -1,24 +1,20 @@
-import 'package:aqar/3qar/buyer_app/property_rating/data/model/rating_model.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-import '../../../../core/common/widgets/container/rounded_container.dart';
-import '../../../../core/common/widgets/properties/aqar_rating_bar_indicator.dart';
-import '../../../../core/common/widgets/texts/read_more_texts.dart';
-import '../../../../core/constants/aqar_colors.dart';
-import '../../../../core/constants/aqar_sizes.dart';
-import '../../../../core/helpers/helper_functions.dart';
+import '../../../utils/rating_model_args.dart';
+import '../container/rounded_container.dart';
+import '../properties/aqar_rating_bar_indicator.dart';
+import '../texts/read_more_texts.dart';
+import '../../../constants/aqar_colors.dart';
+import '../../../constants/aqar_sizes.dart';
+import '../../../helpers/helper_functions.dart';
 
 class UserReviewCard extends StatelessWidget {
-  final List<RatingModel> ratings;
-  final int index;
-  final bool isPropertyOwnerReplied;
+  final RatingModelArgs ratings;
+  final bool isOwnerReplied;
   const UserReviewCard(
-      {super.key,
-      required this.ratings,
-      required this.index,
-      required this.isPropertyOwnerReplied});
+      {super.key, required this.ratings, this.isOwnerReplied = false});
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +29,8 @@ class UserReviewCard extends StatelessWidget {
             Row(
               spacing: AqarSizes.spaceBtwItems,
               children: [
-                CircleAvatar(
-                    backgroundImage: NetworkImage(ratings[index].user!.image!)),
-                Text(ratings[index].user!.fullName,
+                CircleAvatar(backgroundImage: NetworkImage(ratings.image)),
+                Text(ratings.fullName,
                     style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
@@ -45,13 +40,13 @@ class UserReviewCard extends StatelessWidget {
         Row(
           spacing: AqarSizes.spaceBtwItems,
           children: [
-            AqarRatingBarIndicator(rating: ratings[index].rating),
-            Text(AqarHelperFunctions.formatDateTime(ratings[index].createdAt!),
+            AqarRatingBarIndicator(rating: ratings.rating),
+            Text(AqarHelperFunctions.formatDateTime(ratings.createdAt),
                 style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
-        AqarReadMoreText(text: ratings[index].comment!, lines: 3),
-        isPropertyOwnerReplied
+        AqarReadMoreText(text: ratings.comment, lines: 3),
+        isOwnerReplied
             ? RoundedContainer(
                 bgColor: dark ? AqarColors.darkGrey : AqarColors.light,
                 padding: EdgeInsetsDirectional.all(AqarSizes.md),

@@ -12,6 +12,10 @@ class UserModel {
   final String? lastName;
   final String? email;
   final String? phone;
+
+  @JsonKey(name: 'about_me')
+  final String? aboutMe;
+
   final String? password;
 
   final String? image;
@@ -27,20 +31,21 @@ class UserModel {
     required this.userType,
     this.id,
     this.password,
+    this.aboutMe,
     required this.email,
   });
 
-  UserModel copyWith({
-    String? id,
-    String? firstName,
-    String? lastName,
-    String? userName,
-    String? email,
-    String? phone,
-    String? password,
-    String? userType,
-    String? image,
-  }) {
+  UserModel copyWith(
+      {String? id,
+      String? firstName,
+      String? lastName,
+      String? userName,
+      String? email,
+      String? phone,
+      String? password,
+      String? userType,
+      String? image,
+      String? aboutMe}) {
     return UserModel(
       id: id ?? this.id,
       firstName: firstName ?? this.firstName,
@@ -50,6 +55,7 @@ class UserModel {
       password: password ?? this.password,
       image: image ?? this.image,
       userType: userType ?? this.userType,
+      aboutMe: aboutMe ?? this.aboutMe,
     );
   }
 
@@ -57,15 +63,17 @@ class UserModel {
 
   String get formatedPhone => AqarFormaters.formatPhoneNumber(phone!);
 
-  static UserModel empty() => UserModel(
-      firstName: '',
-      lastName: '',
-      phone: '',
-      image: '',
-      id: '',
-      password: '',
-      email: '',
-      userType: '');
+  static const empty = UserModel(
+    firstName: '',
+    lastName: '',
+    phone: '',
+    image: '',
+    id: '',
+    password: '',
+    email: '',
+    userType: '',
+    aboutMe: '',
+  );
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);

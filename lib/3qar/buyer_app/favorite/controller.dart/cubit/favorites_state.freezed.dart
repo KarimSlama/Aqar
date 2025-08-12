@@ -21,8 +21,6 @@ mixin _$FavoritesState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,8 +29,6 @@ mixin _$FavoritesState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,8 +37,6 @@ mixin _$FavoritesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -52,8 +46,6 @@ mixin _$FavoritesState {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,8 +54,6 @@ mixin _$FavoritesState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
     TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,8 +62,6 @@ mixin _$FavoritesState {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
@@ -145,8 +133,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -158,8 +144,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -171,8 +155,6 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -188,8 +170,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
     required TResult Function(Error value) error,
   }) {
     return initial(this);
@@ -201,8 +181,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
     TResult? Function(Error value)? error,
   }) {
     return initial?.call(this);
@@ -214,8 +192,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -274,8 +250,6 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -287,8 +261,6 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -300,8 +272,6 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -317,8 +287,6 @@ class _$LoadingImpl implements Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
     required TResult Function(Error value) error,
   }) {
     return loading(this);
@@ -330,8 +298,6 @@ class _$LoadingImpl implements Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
     TResult? Function(Error value)? error,
   }) {
     return loading?.call(this);
@@ -343,8 +309,6 @@ class _$LoadingImpl implements Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -438,8 +402,6 @@ class _$SuccessImpl implements Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
     required TResult Function(String error) error,
   }) {
     return success(favorites);
@@ -451,8 +413,6 @@ class _$SuccessImpl implements Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
     TResult? Function(String error)? error,
   }) {
     return success?.call(favorites);
@@ -464,8 +424,6 @@ class _$SuccessImpl implements Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -481,8 +439,6 @@ class _$SuccessImpl implements Success {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
     required TResult Function(Error value) error,
   }) {
     return success(this);
@@ -494,8 +450,6 @@ class _$SuccessImpl implements Success {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
     TResult? Function(Error value)? error,
   }) {
     return success?.call(this);
@@ -507,8 +461,6 @@ class _$SuccessImpl implements Success {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -529,336 +481,6 @@ abstract class Success implements FavoritesState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RemovedImplCopyWith<$Res> {
-  factory _$$RemovedImplCopyWith(
-          _$RemovedImpl value, $Res Function(_$RemovedImpl) then) =
-      __$$RemovedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int favoriteId});
-}
-
-/// @nodoc
-class __$$RemovedImplCopyWithImpl<$Res>
-    extends _$FavoritesStateCopyWithImpl<$Res, _$RemovedImpl>
-    implements _$$RemovedImplCopyWith<$Res> {
-  __$$RemovedImplCopyWithImpl(
-      _$RemovedImpl _value, $Res Function(_$RemovedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? favoriteId = null,
-  }) {
-    return _then(_$RemovedImpl(
-      favoriteId: null == favoriteId
-          ? _value.favoriteId
-          : favoriteId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RemovedImpl implements Removed {
-  const _$RemovedImpl({required this.favoriteId});
-
-  @override
-  final int favoriteId;
-
-  @override
-  String toString() {
-    return 'FavoritesState.removed(favoriteId: $favoriteId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RemovedImpl &&
-            (identical(other.favoriteId, favoriteId) ||
-                other.favoriteId == favoriteId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, favoriteId);
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RemovedImplCopyWith<_$RemovedImpl> get copyWith =>
-      __$$RemovedImplCopyWithImpl<_$RemovedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
-    required TResult Function(String error) error,
-  }) {
-    return removed(favoriteId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
-    TResult? Function(String error)? error,
-  }) {
-    return removed?.call(favoriteId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
-    TResult Function(String error)? error,
-    required TResult orElse(),
-  }) {
-    if (removed != null) {
-      return removed(favoriteId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
-    required TResult Function(Error value) error,
-  }) {
-    return removed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
-    TResult? Function(Error value)? error,
-  }) {
-    return removed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (removed != null) {
-      return removed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Removed implements FavoritesState {
-  const factory Removed({required final int favoriteId}) = _$RemovedImpl;
-
-  int get favoriteId;
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RemovedImplCopyWith<_$RemovedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InsertedImplCopyWith<$Res> {
-  factory _$$InsertedImplCopyWith(
-          _$InsertedImpl value, $Res Function(_$InsertedImpl) then) =
-      __$$InsertedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int favoriteId});
-}
-
-/// @nodoc
-class __$$InsertedImplCopyWithImpl<$Res>
-    extends _$FavoritesStateCopyWithImpl<$Res, _$InsertedImpl>
-    implements _$$InsertedImplCopyWith<$Res> {
-  __$$InsertedImplCopyWithImpl(
-      _$InsertedImpl _value, $Res Function(_$InsertedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? favoriteId = null,
-  }) {
-    return _then(_$InsertedImpl(
-      favoriteId: null == favoriteId
-          ? _value.favoriteId
-          : favoriteId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$InsertedImpl implements Inserted {
-  const _$InsertedImpl({required this.favoriteId});
-
-  @override
-  final int favoriteId;
-
-  @override
-  String toString() {
-    return 'FavoritesState.inserted(favoriteId: $favoriteId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InsertedImpl &&
-            (identical(other.favoriteId, favoriteId) ||
-                other.favoriteId == favoriteId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, favoriteId);
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InsertedImplCopyWith<_$InsertedImpl> get copyWith =>
-      __$$InsertedImplCopyWithImpl<_$InsertedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
-    required TResult Function(String error) error,
-  }) {
-    return inserted(favoriteId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
-    TResult? Function(String error)? error,
-  }) {
-    return inserted?.call(favoriteId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
-    TResult Function(String error)? error,
-    required TResult orElse(),
-  }) {
-    if (inserted != null) {
-      return inserted(favoriteId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
-    required TResult Function(Error value) error,
-  }) {
-    return inserted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
-    TResult? Function(Error value)? error,
-  }) {
-    return inserted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
-    TResult Function(Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (inserted != null) {
-      return inserted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Inserted implements FavoritesState {
-  const factory Inserted({required final int favoriteId}) = _$InsertedImpl;
-
-  int get favoriteId;
-
-  /// Create a copy of FavoritesState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InsertedImplCopyWith<_$InsertedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -933,8 +555,6 @@ class _$ErrorImpl implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<FavoriteModel> favorites) success,
-    required TResult Function(int favoriteId) removed,
-    required TResult Function(int favoriteId) inserted,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -946,8 +566,6 @@ class _$ErrorImpl implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<FavoriteModel> favorites)? success,
-    TResult? Function(int favoriteId)? removed,
-    TResult? Function(int favoriteId)? inserted,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -959,8 +577,6 @@ class _$ErrorImpl implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<FavoriteModel> favorites)? success,
-    TResult Function(int favoriteId)? removed,
-    TResult Function(int favoriteId)? inserted,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -976,8 +592,6 @@ class _$ErrorImpl implements Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
-    required TResult Function(Removed value) removed,
-    required TResult Function(Inserted value) inserted,
     required TResult Function(Error value) error,
   }) {
     return error(this);
@@ -989,8 +603,6 @@ class _$ErrorImpl implements Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
-    TResult? Function(Removed value)? removed,
-    TResult? Function(Inserted value)? inserted,
     TResult? Function(Error value)? error,
   }) {
     return error?.call(this);
@@ -1002,8 +614,6 @@ class _$ErrorImpl implements Error {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
-    TResult Function(Removed value)? removed,
-    TResult Function(Inserted value)? inserted,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
