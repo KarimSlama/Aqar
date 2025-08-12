@@ -52,7 +52,7 @@ class PropertyRatingScreen extends StatelessWidget {
                               rating: ratings.averageRating ?? 0.0),
                           Text('${ratings.totalReviewsCount}',
                               style: Theme.of(context).textTheme.bodySmall),
-                          ListOfUserRatingsCard(ratings: ratings.reviews!),
+                          ListOfUserRatingsCard(ratings: ratings.reviews ?? []),
                         ],
                       ),
                 error: (error) => Text(error),

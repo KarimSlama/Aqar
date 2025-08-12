@@ -1,9 +1,10 @@
 import 'package:aqar/3qar/buyer_app/property_rating/data/model/rating_model.dart';
 import 'package:flutter/material.dart';
-import 'user_review_card.dart';
+import '../../../../core/common/widgets/card/user_review_card.dart';
+import '../../../../core/utils/rating_model_args.dart';
 
 class ListOfUserRatingsCard extends StatelessWidget {
-  final List<RatingModel> ratings;
+  final dynamic ratings;
 
   const ListOfUserRatingsCard({
     super.key,
@@ -16,10 +17,15 @@ class ListOfUserRatingsCard extends StatelessWidget {
       children: List.generate(
         ratings.length,
         (index) => UserReviewCard(
-            key: ValueKey(ratings[index].id),
-            ratings: ratings,
-            isPropertyOwnerReplied: false,
-            index: index),
+          key: ValueKey(ratings[index].id),
+          ratings: RatingModelArgs(
+              image: ratings[index].user!.image ?? '',
+              fullName: ratings[index].user!.fullName,
+              comment: ratings[index].comment ?? '',
+              createdAt: ratings[index].createdAt ?? '',
+              rating: ratings[index].rating),
+          isOwnerReplied: false,
+        ),
       ),
     );
   }

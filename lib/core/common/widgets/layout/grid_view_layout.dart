@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/aqar_sizes.dart';
-
 class GridViewLayout extends StatelessWidget {
   final int itemCount;
   final double mainAxisExtent;
@@ -21,8 +19,8 @@ class GridViewLayout extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: MediaQuery.of(context).size.shortestSide < 800 ? 2 : 4,
-        mainAxisSpacing: AqarSizes.gridViewSpacing,
-        crossAxisSpacing: AqarSizes.gridViewSpacing,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 0,
         mainAxisExtent: mainAxisExtent,
       ),
       itemBuilder: itemBuilder,

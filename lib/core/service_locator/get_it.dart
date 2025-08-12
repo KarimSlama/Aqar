@@ -5,6 +5,9 @@ import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service_impl.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/properties_repository.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/units_repository.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
+import 'package:aqar/3qar/buyer_app/profile/data/network/profile_service.dart';
+import 'package:aqar/3qar/buyer_app/profile/data/repository/profile_repository.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/data/network/rating_service.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/data/repository/rating_repository.dart';
@@ -19,6 +22,7 @@ import 'package:get_it/get_it.dart';
 import '../../3qar/buyer_app/favorite/data/favorites_repository.dart';
 import '../../3qar/buyer_app/favorite/data/network/favorite_service.dart';
 import '../../3qar/buyer_app/favorite/data/network/favorite_service_impl.dart';
+import '../../3qar/buyer_app/profile/data/network/profile_service_impl.dart';
 import '../../3qar/buyer_app/property_rating/data/network/rating_service_impl.dart';
 import '../network/users/user_service.dart';
 import '../network/users/user_service_impl.dart';
@@ -35,7 +39,10 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<PropertyService>(() => PropertyServiceImpl());
 
   getIt.registerLazySingleton<RatingService>(() => RatingServiceImpl());
+
   getIt.registerLazySingleton<FavoriteService>(() => FavoriteServiceImpl());
+
+  getIt.registerLazySingleton<ProfileService>(() => ProfileServiceImpl());
 
   /// LOGIN
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
@@ -64,4 +71,9 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<FavoritesRepository>(
       () => FavoritesRepository(getIt()));
   getIt.registerFactory<FavoritesCubit>(() => FavoritesCubit(getIt()));
+
+  /// PROFILES
+  getIt.registerLazySingleton<ProfileRepository>(
+      () => ProfileRepository(getIt()));
+  getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt()));
 }

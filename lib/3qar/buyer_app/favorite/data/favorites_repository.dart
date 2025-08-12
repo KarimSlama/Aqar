@@ -10,7 +10,6 @@ class FavoritesRepository {
   Future<ServerResult<List<FavoriteModel>>> fetchFavorites() async {
     try {
       final favorites = await favoriteService.fetchFavoritesProperteis();
-      print('favoirtes repo are ${favorites.first.propertyId}');
       return ServerResult.success(favorites);
     } catch (error) {
       print('error with repo $error');
@@ -21,10 +20,8 @@ class FavoritesRepository {
   Future<ServerResult<int>> removeFavoriteProperty(propertyId) async {
     try {
       final favorite = await favoriteService.removeFavoriteProperty(propertyId);
-      print('removed favoirte repo are');
       return ServerResult.success(favorite);
     } catch (error) {
-      print('error with remove property favorite is $error');
       return ServerResult.failure(error.toString());
     }
   }
@@ -32,10 +29,8 @@ class FavoritesRepository {
   Future<ServerResult<int>> insertFavoriteProperty(propertyId) async {
     try {
       final favorite = await favoriteService.insertFavoriteProperty(propertyId);
-      print('insert favoirte repo are $favorite');
       return ServerResult.success(favorite);
     } catch (error) {
-      print('error with remove property favorite is $error');
       return ServerResult.failure(error.toString());
     }
   }

@@ -13,14 +13,14 @@ class RatingServiceImpl implements RatingService {
       final response = await supabase.rpc(
         'get_property_ratings_summary',
         params: {'property_id_param': propertyId},
-      ) as List;
+      );
 
       if (response.isEmpty) {
         return const PropertyRatingsSummaryModel(
             reviews: [], averageRating: 0.0, totalReviewsCount: 0);
       }
 
-      final firstResponseItem = response.first as Map<String, dynamic>;
+      final firstResponseItem = response as Map<String, dynamic>;
       return PropertyRatingsSummaryModel.fromJson(firstResponseItem);
     } catch (error) {
       return const PropertyRatingsSummaryModel(
