@@ -1,4 +1,3 @@
-import 'package:aqar/3qar/buyer_app/profile/data/model/profile_args.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,6 @@ import '../../../../core/constants/aqar_sizes.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/local_storage/local_storage.dart';
 import '../../../../core/routing/routes.dart';
-import '../../home/controller/home_cubit.dart';
 import '../controller/cubit/profile_cubit.dart';
 import '../controller/cubit/profile_state.dart';
 import '../data/model/profile_enum.dart';
@@ -73,22 +71,14 @@ class PersonalInformationRowAndAccountDetailsTile extends StatelessWidget {
                 SettingsMenuTile(
                     icon: Iconsax.profile_remove_copy,
                     title: AqarString.personalInformation,
-                    onTap: () =>
-                        context.pushNamed(Routes.personalInformationScreen,
-                            arguments: ProfileArgs(
-                              user: user,
-                              homeCubit: context.read<HomeCubit>(),
-                              profileCubit: context.read<ProfileCubit>(),
-                            ))),
+                    onTap: () => context.pushNamed(
+                        Routes.personalInformationScreen,
+                        arguments: user)),
                 SettingsMenuTile(
                     icon: Iconsax.profile_add_copy,
                     title: AqarString.profileDetails,
                     onTap: () => context.pushNamed(Routes.profileDetailsScreen,
-                        arguments: ProfileArgs(
-                          user: user,
-                          homeCubit: context.read<HomeCubit>(),
-                          profileCubit: context.read<ProfileCubit>(),
-                        ))),
+                        arguments: user)),
               ],
             );
           case ProfileDataState.error:

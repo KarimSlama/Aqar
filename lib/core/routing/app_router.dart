@@ -3,13 +3,14 @@ import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navig
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
-import 'package:aqar/3qar/buyer_app/profile/data/model/profile_args.dart';
 import 'package:aqar/3qar/buyer_app/property_details/property_details_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
 import 'package:aqar/3qar/buyer_app/recommended_for_you_all_properties/recommended_for_you_all_properties_screen.dart';
+import 'package:aqar/3qar/buyer_app/support/support_screen.dart';
 import 'package:aqar/3qar/login_option/login_option_screen.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
+import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
 import 'package:aqar/3qar/splash/splash_screen.dart';
 import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../3qar/buyer_app/home/controller/home_cubit.dart';
 import '../../3qar/buyer_app/personal_information/personal_information_screen.dart';
+import '../../3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
 import '../../3qar/buyer_app/profile_details/profile_details_screen.dart';
 import '../../3qar/buyer_app/property_details/data/model/property_args.dart';
 import '../../3qar/login/controller/login_cubit.dart';
@@ -114,15 +116,30 @@ class AppRouter {
         );
 
       case Routes.personalInformationScreen:
-        final profileArgs = settings.arguments as ProfileArgs;
+        final profile = settings.arguments as UserModel;
         return MaterialPageRoute(
-          builder: (_) => PersonalInformationScreen(profileArgs: profileArgs),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: getIt<ProfileCubit>(),
+              ),
+              BlocProvider.value(
+                value: getIt<HomeCubit>(),
+              ),
+            ],
+            child: PersonalInformationScreen(profile: profile),
+          ),
         );
 
       case Routes.profileDetailsScreen:
-        final profileArgs = settings.arguments as ProfileArgs;
+        final profile = settings.arguments as UserModel;
         return MaterialPageRoute(
-          builder: (_) => ProfileDetailsScreen(),
+          builder: (_) => ProfileDetailsScreen(profile: profile),
+        );
+
+      case Routes.supportScreen:
+        return MaterialPageRoute(
+          builder: (_) => SupportScreen(),
         );
 
       default:

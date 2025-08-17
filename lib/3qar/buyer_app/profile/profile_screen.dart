@@ -2,11 +2,13 @@ import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart'
 import 'package:aqar/core/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
+import 'package:aqar/core/helpers/extensions.dart';
 import 'package:aqar/core/service_locator/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import '../../../core/routing/routes.dart';
 import 'widget/personal_information_row_and_account_details_tile.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -31,6 +33,7 @@ class ProfileScreen extends StatelessWidget {
                   icon: Iconsax.headphone,
                   title: AqarString.support,
                   trailing: SizedBox.shrink(),
+                  onTap: () => context.pushNamed(Routes.supportScreen),
                 ),
                 SettingsMenuTile(
                   icon: Iconsax.info_circle_copy,

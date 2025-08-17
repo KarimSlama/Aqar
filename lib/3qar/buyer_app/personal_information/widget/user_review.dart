@@ -10,42 +10,37 @@ import '../../profile/data/model/profile_enum.dart';
 import '../../property_rating/widgets/list_of_user_ratings_card.dart';
 
 class UserReview extends StatelessWidget {
-  final ProfileCubit profileCubit;
   final String sellerId;
-  const UserReview(
-      {super.key, required this.profileCubit, required this.sellerId});
+  const UserReview({super.key, required this.sellerId});
 
   @override
   Widget build(BuildContext context) {
-    profileCubit.fetchSellerRating(sellerId);
-    return BlocProvider.value(
-      value: profileCubit,
-      child: Column(
-        children: [
-          SectionHeading(text: AqarString.userReviews),
-          BlocBuilder<ProfileCubit, ProfileState>(
-            builder: (context, state) {
-              switch (state.sellerRatingStatus) {
-                case ProfileDataState.loading:
-                  return RatingShimmerLoading();
-                case ProfileDataState.success:
-                  final ratings = state.sellerRatingData;
-                  return ratings.isEmpty
-                      ? Text(
-                          AqarString.noReviewsYet,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                          textAlign: TextAlign.justify,
-                        )
-                      : ListOfUserRatingsCard(ratings: ratings);
+    context.read<ProfileCubit>().fetchSellerRating(sellerId);
+    return Column(
+      children: [
+        SectionHeading(text: AqarString.userReviews),
+        BlocBuilder<ProfileCubit, ProfileState>(
+          builder: (context, state) {
+            switch (state.sellerRatingStatus) {
+              case ProfileDataState.loading:
+                return RatingShimmerLoading();
+              case ProfileDataState.success:
+                final ratings = state.sellerRatingData;
+                return ratings.isEmpty
+                    ? Text(
+                        AqarString.noReviewsYet,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        textAlign: TextAlign.justify,
+                      )
+                    : ListOfUserRatingsCard(ratings: ratings);
 
-                case ProfileDataState.error:
-                  return Text(
-                      state.errorMessage ?? AqarString.somethingWentWrong);
-              }
-            },
-          ),
-        ],
-      ),
+              case ProfileDataState.error:
+                return Text(
+                    state.errorMessage ?? AqarString.somethingWentWrong);
+            }
+          },
+        ),
+      ],
     );
   }
 }

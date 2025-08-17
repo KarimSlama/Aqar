@@ -1,10 +1,8 @@
-import 'package:aqar/core/constants/aqar_colors.dart';
-import 'package:aqar/core/helpers/helper_functions.dart';
+import 'package:aqar/core/common/widgets/get_location_address.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/constants/aqar_sizes.dart';
-import '../../../../core/common/widgets/row/row_icon_with_title.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -16,13 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         spacing: AqarSizes.sm,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          RowIconWithTitle(
-            icon: Iconsax.location_copy,
-            iconColor: AqarHelperFunctions.isDark(context)
-                ? AqarColors.white
-                : AqarColors.black,
-            text: 'Dubai, UAE',
-          ),
+          GetLocationAddress(isHeading: true, icon: Iconsax.location_copy),
           Text('Good Morning!', style: Theme.of(context).textTheme.bodyLarge),
         ],
       ),

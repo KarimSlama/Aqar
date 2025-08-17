@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:aqar/3qar/buyer_app/profile/data/model/seller_rating_model.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/network/profile_service.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
@@ -85,8 +87,29 @@ class ProfileServiceImpl implements ProfileService {
   }
 
   @override
-  Future<String> updateUserDetails(UserModel userModel) {
-    // TODO: implement updateUserDetails
-    throw UnimplementedError();
+  Future<String> uploadProfileImageToStorage(File imagePath) async {
+    try {
+      final userId = supabase.auth.currentUser?.id;
+      if (userId == null) {
+        throw Exception('User is not authenticated');
+      }
+
+      final imageBytes = await imagePath.readAsBytes();
+      final imageExtension = imagePath.path.split('.').last.toLowerCase();
+
+      final uniqueFileName =
+          '${DateTime.now().millisecondsSinceEpoch}.$imageExtension';
+      final filePath = '$userId/$uniqueFileName';
+
+      await supabase.storage.from('profiles').uploadBinary(filePath, imageBytes,
+          fileOptions:
+              FileOptions(upsert: true, contentType: 'image/$imageExtension'));
+
+      final imageUrl = supabase.storage.from('profiles').getPublicUrl(filePath);
+
+      return imageUrl;
+    } catch (error) {
+      throw Exception('Error uploading profile image to storage: $error');
+    }
   }
 }

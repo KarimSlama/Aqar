@@ -60,7 +60,7 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<PropertiesRepository>(
       () => PropertiesRepository(getIt()));
   getIt.registerLazySingleton<UnitsRepository>(() => UnitsRepository(getIt()));
-  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt(), getIt()));
+  getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt(), getIt()));
 
   /// RATINGS
   getIt
@@ -75,5 +75,5 @@ Future<void> setupServiceLocator() async {
   /// PROFILES
   getIt.registerLazySingleton<ProfileRepository>(
       () => ProfileRepository(getIt()));
-  getIt.registerFactory<ProfileCubit>(() => ProfileCubit(getIt()));
+  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:aqar/3qar/buyer_app/profile/data/model/seller_rating_model.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/network/profile_service.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
@@ -33,6 +35,17 @@ class ProfileRepository {
       return ServerResult.success(field);
     } catch (error) {
       print('error with update singl efield  $error');
+      return ServerResult.failure(error.toString());
+    }
+  }
+
+  Future<ServerResult<String>> uploadProfileImageToStorage(File path) async {
+    try {
+      final image = await profileService.uploadProfileImageToStorage(path);
+      print('image in repo $image');
+      return ServerResult.success(image);
+    } catch (error) {
+      print('error with upload image repo is $error');
       return ServerResult.failure(error.toString());
     }
   }
