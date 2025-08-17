@@ -13,4 +13,5 @@ class Routes {
       '/recommendedForYouAllPropertiesScreen';
   static const String personalInformationScreen = '/personalInformationScreen';
   static const String profileDetailsScreen = '/profileDetailsScreen';
+  static const String supportScreen = '/supportScreen';
 }

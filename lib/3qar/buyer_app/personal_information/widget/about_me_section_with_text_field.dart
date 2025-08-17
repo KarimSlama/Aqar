@@ -1,4 +1,3 @@
-import 'package:aqar/core/constants/aqar_colors.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
@@ -7,18 +6,17 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/common/widgets/aqar_text_form_field.dart';
 import '../../../../core/common/widgets/texts/section_heading.dart';
+import '../../../../core/constants/aqar_colors.dart';
 import '../../profile/controller/cubit/profile_cubit.dart';
 import '../../profile/controller/cubit/profile_state.dart';
-import '../../profile/data/model/profile_args.dart';
 
 class AboutMeSectionWithTextField extends StatelessWidget {
-  final ProfileArgs profileArgs;
-  const AboutMeSectionWithTextField({super.key, required this.profileArgs});
+  const AboutMeSectionWithTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final profileCubit = context.read<ProfileCubit>();
     return BlocBuilder<ProfileCubit, ProfileState>(
-      bloc: profileArgs.profileCubit,
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -28,17 +26,17 @@ class AboutMeSectionWithTextField extends StatelessWidget {
                 text: AqarString.aboutMe,
                 icon: Iconsax.edit_2,
                 onPressed: () {
-                  profileArgs.profileCubit.editAboutMe();
+                  profileCubit.changeEnabledState();
                 },
                 isIcon: true,
                 isActionButton: false),
             AqarTextFormField(
               inputType: TextInputType.text,
-              controller: profileArgs.profileCubit.aboutMeController,
+              controller: profileCubit.aboutMeController,
               borderColor: Colors.transparent,
-              isEnabled: profileArgs.profileCubit.isEnabled,
+              isEnabled: profileCubit.isEnabled,
             ),
-            profileArgs.profileCubit.isEnabled == true
+            profileCubit.isEnabled == true
                 ? Container(
                     width: 80,
                     height: 40,
@@ -47,8 +45,9 @@ class AboutMeSectionWithTextField extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50)),
                     child: TextButton(
                       onPressed: () {
-                        profileArgs.profileCubit.updateSingleFieldData().then(
-                            (value) => profileArgs.profileCubit.editAboutMe());
+                        profileCubit
+                            .updateSingleFieldData()
+                            .then((value) => profileCubit.changeEnabledState());
                       },
                       child: Text(
                         AqarString.save,

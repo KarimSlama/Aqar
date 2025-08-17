@@ -1,3 +1,3 @@
 enum ProfileDataState { loading, success, error }
 
-enum ProfileUpdateDataState { enabled }
+enum ProfileUpdateDataState { enabled, updated }

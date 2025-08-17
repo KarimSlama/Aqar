@@ -11,6 +11,7 @@ class ProfileState with _$ProfileState {
   const factory ProfileState({
     @Default(ProfileDataState.loading) ProfileDataState profileDataStatus,
     @Default(ProfileDataState.loading) ProfileDataState sellerRatingStatus,
+    @Default(ProfileUpdateDataState.enabled) ProfileUpdateDataState updated,
     @Default(ProfileUpdateDataState.enabled)
     ProfileUpdateDataState editAboutMeEnabled,
     @Default(UserModel.empty) UserModel userData,

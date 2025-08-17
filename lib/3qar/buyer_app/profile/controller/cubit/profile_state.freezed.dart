@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProfileState {
   ProfileDataState get profileDataStatus => throw _privateConstructorUsedError;
   ProfileDataState get sellerRatingStatus => throw _privateConstructorUsedError;
+  ProfileUpdateDataState get updated => throw _privateConstructorUsedError;
   ProfileUpdateDataState get editAboutMeEnabled =>
       throw _privateConstructorUsedError;
   UserModel get userData => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $ProfileStateCopyWith<$Res> {
   $Res call(
       {ProfileDataState profileDataStatus,
       ProfileDataState sellerRatingStatus,
+      ProfileUpdateDataState updated,
       ProfileUpdateDataState editAboutMeEnabled,
       UserModel userData,
       bool isEnabled,
@@ -66,6 +68,7 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
   $Res call({
     Object? profileDataStatus = null,
     Object? sellerRatingStatus = null,
+    Object? updated = null,
     Object? editAboutMeEnabled = null,
     Object? userData = null,
     Object? isEnabled = null,
@@ -81,6 +84,10 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
           ? _value.sellerRatingStatus
           : sellerRatingStatus // ignore: cast_nullable_to_non_nullable
               as ProfileDataState,
+      updated: null == updated
+          ? _value.updated
+          : updated // ignore: cast_nullable_to_non_nullable
+              as ProfileUpdateDataState,
       editAboutMeEnabled: null == editAboutMeEnabled
           ? _value.editAboutMeEnabled
           : editAboutMeEnabled // ignore: cast_nullable_to_non_nullable
@@ -116,6 +123,7 @@ abstract class _$$ProfileStateImplCopyWith<$Res>
   $Res call(
       {ProfileDataState profileDataStatus,
       ProfileDataState sellerRatingStatus,
+      ProfileUpdateDataState updated,
       ProfileUpdateDataState editAboutMeEnabled,
       UserModel userData,
       bool isEnabled,
@@ -138,6 +146,7 @@ class __$$ProfileStateImplCopyWithImpl<$Res>
   $Res call({
     Object? profileDataStatus = null,
     Object? sellerRatingStatus = null,
+    Object? updated = null,
     Object? editAboutMeEnabled = null,
     Object? userData = null,
     Object? isEnabled = null,
@@ -153,6 +162,10 @@ class __$$ProfileStateImplCopyWithImpl<$Res>
           ? _value.sellerRatingStatus
           : sellerRatingStatus // ignore: cast_nullable_to_non_nullable
               as ProfileDataState,
+      updated: null == updated
+          ? _value.updated
+          : updated // ignore: cast_nullable_to_non_nullable
+              as ProfileUpdateDataState,
       editAboutMeEnabled: null == editAboutMeEnabled
           ? _value.editAboutMeEnabled
           : editAboutMeEnabled // ignore: cast_nullable_to_non_nullable
@@ -183,6 +196,7 @@ class _$ProfileStateImpl implements _ProfileState {
   const _$ProfileStateImpl(
       {this.profileDataStatus = ProfileDataState.loading,
       this.sellerRatingStatus = ProfileDataState.loading,
+      this.updated = ProfileUpdateDataState.enabled,
       this.editAboutMeEnabled = ProfileUpdateDataState.enabled,
       this.userData = UserModel.empty,
       this.isEnabled = false,
@@ -196,6 +210,9 @@ class _$ProfileStateImpl implements _ProfileState {
   @override
   @JsonKey()
   final ProfileDataState sellerRatingStatus;
+  @override
+  @JsonKey()
+  final ProfileUpdateDataState updated;
   @override
   @JsonKey()
   final ProfileUpdateDataState editAboutMeEnabled;
@@ -220,7 +237,7 @@ class _$ProfileStateImpl implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(profileDataStatus: $profileDataStatus, sellerRatingStatus: $sellerRatingStatus, editAboutMeEnabled: $editAboutMeEnabled, userData: $userData, isEnabled: $isEnabled, sellerRatingData: $sellerRatingData, errorMessage: $errorMessage)';
+    return 'ProfileState(profileDataStatus: $profileDataStatus, sellerRatingStatus: $sellerRatingStatus, updated: $updated, editAboutMeEnabled: $editAboutMeEnabled, userData: $userData, isEnabled: $isEnabled, sellerRatingData: $sellerRatingData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -232,6 +249,7 @@ class _$ProfileStateImpl implements _ProfileState {
                 other.profileDataStatus == profileDataStatus) &&
             (identical(other.sellerRatingStatus, sellerRatingStatus) ||
                 other.sellerRatingStatus == sellerRatingStatus) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
             (identical(other.editAboutMeEnabled, editAboutMeEnabled) ||
                 other.editAboutMeEnabled == editAboutMeEnabled) &&
             (identical(other.userData, userData) ||
@@ -249,6 +267,7 @@ class _$ProfileStateImpl implements _ProfileState {
       runtimeType,
       profileDataStatus,
       sellerRatingStatus,
+      updated,
       editAboutMeEnabled,
       userData,
       isEnabled,
@@ -268,6 +287,7 @@ abstract class _ProfileState implements ProfileState {
   const factory _ProfileState(
       {final ProfileDataState profileDataStatus,
       final ProfileDataState sellerRatingStatus,
+      final ProfileUpdateDataState updated,
       final ProfileUpdateDataState editAboutMeEnabled,
       final UserModel userData,
       final bool isEnabled,
@@ -278,6 +298,8 @@ abstract class _ProfileState implements ProfileState {
   ProfileDataState get profileDataStatus;
   @override
   ProfileDataState get sellerRatingStatus;
+  @override
+  ProfileUpdateDataState get updated;
   @override
   ProfileUpdateDataState get editAboutMeEnabled;
   @override

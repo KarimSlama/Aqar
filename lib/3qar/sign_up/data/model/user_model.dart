@@ -23,6 +23,8 @@ class UserModel {
   @JsonKey(name: 'user_type')
   final String? userType;
 
+  @JsonKey(name: 'created_at')
+  final String? createdAt;
   const UserModel({
     required this.firstName,
     required this.lastName,
@@ -32,6 +34,7 @@ class UserModel {
     this.id,
     this.password,
     this.aboutMe,
+    this.createdAt,
     required this.email,
   });
 
@@ -45,6 +48,7 @@ class UserModel {
       String? password,
       String? userType,
       String? image,
+      String? createdAt,
       String? aboutMe}) {
     return UserModel(
       id: id ?? this.id,
@@ -56,6 +60,7 @@ class UserModel {
       image: image ?? this.image,
       userType: userType ?? this.userType,
       aboutMe: aboutMe ?? this.aboutMe,
+      createdAt: createdAt ?? this.createdAt,
     );
   }
 
@@ -73,6 +78,7 @@ class UserModel {
     email: '',
     userType: '',
     aboutMe: '',
+    createdAt: '',
   );
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>

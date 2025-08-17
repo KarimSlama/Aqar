@@ -13,6 +13,7 @@ dependencies:
   build_runner: ^2.4.14
   cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
+  file_picker: ^10.3.1
   firebase_core: ^4.0.0
   flutter:
     sdk: flutter
@@ -40,6 +41,9 @@ dependencies:
   shimmer: ^3.0.0
   supabase_flutter: ^2.9.1
   url_launcher: ^6.3.1
+
+  geocoding: ^3.0.0
+  geolocator: ^11.0.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0

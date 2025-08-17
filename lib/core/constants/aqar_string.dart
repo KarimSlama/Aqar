@@ -87,4 +87,6 @@ class AqarString {
   static const String contactInformation = 'Contact Information';
   static const String userReviews = 'User Reviews';
   static const String save = 'Save';
+  static const String recentProperties = 'Recent Properties';
+  static const String noPropertiesPosted = 'No Properties Posted';
 }

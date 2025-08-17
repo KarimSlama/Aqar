@@ -7,10 +7,12 @@ import '../separators/heigth_separators.dart';
 class ContactInformationRow extends StatelessWidget {
   final String text;
   final IconData icon;
+  final bool isHeading;
   const ContactInformationRow({
     super.key,
     required this.text,
     required this.icon,
+    this.isHeading = false,
   });
 
   @override
@@ -18,7 +20,7 @@ class ContactInformationRow extends StatelessWidget {
     return Row(
       spacing: AqarSizes.sm,
       children: [
-        HeightSeperator(),
+        isHeading ? SizedBox.shrink() : HeightSeperator(),
         Icon(icon, color: AqarColors.primary),
         Text(
           text,
