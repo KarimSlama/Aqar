@@ -12,7 +12,6 @@ class UnitsRepository {
       final units = await _propertyService.getUnits();
       return units;
     } catch (error) {
-      print('error with unit repo is $error');
       return ServerResult.failure(error.toString());
     }
   }

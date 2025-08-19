@@ -80,6 +80,8 @@ class AqarString {
   static const String helpInfo = 'Help & Info';
   static const String changeLocation = 'Change Location';
   static const String favoritedPlaces = 'Favorited Places';
+  static const String favorites = 'Favorites';
+  static const String chats = 'Chats';
   static const String country = 'Country';
   static const String notSpecified = 'Not specified';
   static const String noReviewsYet = 'No reviews yet';
@@ -87,6 +89,7 @@ class AqarString {
   static const String contactInformation = 'Contact Information';
   static const String userReviews = 'User Reviews';
   static const String save = 'Save';
+  static const String typeMessageHere = 'type message here';
   static const String recentProperties = 'Recent Properties';
   static const String noPropertiesPosted = 'No Properties Posted';
 }

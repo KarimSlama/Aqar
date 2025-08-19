@@ -5,8 +5,8 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../../core/common/widgets/aqar_text_form_field.dart';
 import '../../../../core/constants/aqar_colors.dart';
 
-class SearchTextFormField extends StatelessWidget {
-  const SearchTextFormField({super.key});
+class FlexibleTextFormField extends StatelessWidget {
+  const FlexibleTextFormField({super.key});
 
   @override
   Widget build(BuildContext context) {

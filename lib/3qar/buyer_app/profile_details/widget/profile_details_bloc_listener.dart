@@ -7,7 +7,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileDetailsBlocListener extends StatelessWidget {
-  // final ProfileCubit profileCubit;
   const ProfileDetailsBlocListener({super.key});
 
   @override
@@ -23,8 +22,9 @@ class ProfileDetailsBlocListener extends StatelessWidget {
         } else if (state.errorMessage == ProfileDataState.error) {
           Loaders.errorSnackBar(
               context: context,
-              title: 'خطأ',
-              message: state.errorMessage ?? 'حدث خطأ أثناء تحديث البيانات');
+              title: 'Error',
+              message: state.errorMessage ??
+                  'Something went wrong while reload data');
         }
       },
       child: SizedBox.shrink(),

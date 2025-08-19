@@ -17,7 +17,6 @@ class RatingCubit extends Cubit<RatingState> {
 
     result.when(success: (ratings) {
       _isRatingsLoaded = true;
-      print('ratings ${ratings.totalReviewsCount}');
 
       emit(RatingState.success(ratings: ratings));
     }, failure: (error) {

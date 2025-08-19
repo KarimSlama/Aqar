@@ -43,7 +43,6 @@ class SignUpScreen extends StatelessWidget {
                     final signUpCubit = context.read<SignUpCubit>();
                     if (signUpCubit.signUpFormKey.currentState!.validate()) {
                       signUpCubit.signUp();
-                      print(signUpCubit.userType);
                     }
                   },
                   child: Text(AqarString.signUp),

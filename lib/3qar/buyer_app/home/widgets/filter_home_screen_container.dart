@@ -5,7 +5,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../../core/constants/aqar_colors.dart';
 import '../../../../core/constants/aqar_sizes.dart';
 import 'filter_menu_items.dart';
-import 'search_text_form_field.dart';
+import 'flexible_text_form_field.dart';
 
 class FilterHomeSearchContainer extends StatelessWidget {
   const FilterHomeSearchContainer({super.key});
@@ -23,7 +23,7 @@ class FilterHomeSearchContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: AqarSizes.ms,
         children: [
-          SearchTextFormField(),
+          FlexibleTextFormField(),
           Container(
             width: .5,
             height: AqarHelperFunctions.screenHeight(context) / 30,

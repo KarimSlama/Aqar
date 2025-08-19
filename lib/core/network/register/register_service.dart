@@ -7,8 +7,4 @@ abstract class RegisterService {
   Future<ServerResult<String?>> signUp(UserModel userModel);
 
   Future<ServerResult<String?>> login(LoginRequestBody loginRequestBody);
-
-  // Future<ServerResult<void>> sendPasswordResetEmail(String email);
-
-  // Future<void> signOut();
 }
