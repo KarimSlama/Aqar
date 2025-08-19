@@ -1,7 +1,7 @@
-// favorite_screen.dart
-
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/widgets/property_card.dart';
+import 'package:aqar/core/common/widgets/app_bar/normal_app_bar.dart';
+import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../home/controller/home_cubit.dart';
@@ -31,7 +31,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Favorites')),
+      appBar: NormalAqarAppBar(text: AqarString.favorites),
       body: BlocListener<FavoritesCubit, FavoritesState>(
         listener: (context, state) {
           if (state is Success) {
@@ -39,18 +39,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 .read<FavoritesCubit>()
                 .getFavoriteProperties(_allProperties);
 
-            // تحديد العناصر المحذوفة
             final removedItems = _favoriteProperties
                 .where((item) => !newFavorites.contains(item))
                 .toList();
 
-            // معالجة العناصر المحذوفة
             for (var removedItem in removedItems) {
               final removedIndex = _favoriteProperties.indexOf(removedItem);
               if (removedIndex != -1) {
-                // إزالة العنصر من القائمة الداخلية أولاً
                 _favoriteProperties.removeAt(removedIndex);
-                // إخبار الـ AnimatedList بالحذف
                 _listKey.currentState?.removeItem(
                   removedIndex,
                   (context, animation) =>
@@ -60,12 +56,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               }
             }
 
-            // تحديد العناصر المضافة
             final addedItems = newFavorites
                 .where((item) => !_favoriteProperties.contains(item))
                 .toList();
 
-            // معالجة العناصر المضافة
             for (var addedItem in addedItems) {
               _favoriteProperties.add(addedItem);
               _listKey.currentState?.insertItem(_favoriteProperties.length - 1);
@@ -103,44 +97,3 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     );
   }
 }
-
-// import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
-// import 'package:aqar/3qar/buyer_app/home/widgets/property_card.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-
-// import '../home/controller/home_cubit.dart';
-// import 'controller.dart/cubit/favorites_state.dart';
-
-// class FavoriteScreen extends StatelessWidget {
-//   const FavoriteScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final allProperties = context.read<HomeCubit>().state.propertiesData;
-//     return BlocBuilder<FavoritesCubit, FavoritesState>(
-//       builder: (context, state) {
-//         final favoriteProperties =
-//             context.read<FavoritesCubit>().getFavoriteProperties(allProperties);
-
-//         if (favoriteProperties.isEmpty) {
-//           return const Center(child: Text('No favorites yet!'));
-//         }
-
-//         return AnimatedList(
-//           initialItemCount: favoriteProperties.length,
-//           itemBuilder: (context, index, animation) {
-//             final property = favoriteProperties[index];
-//             return SlideTransition(
-//               position: animation.drive(Tween(
-//                 begin: const Offset(1, 0),
-//                 end: Offset.zero,
-//               )),
-//               child: PropertyCard(property: property),
-//             );
-//           },
-//         );
-//       },
-//     );
-//   }
-// }

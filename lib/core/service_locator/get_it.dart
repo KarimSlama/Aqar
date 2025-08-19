@@ -1,4 +1,10 @@
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
+import 'package:aqar/3qar/buyer_app/chat/cubit/chat_list_cubit.dart';
+import 'package:aqar/3qar/buyer_app/chat/data/network/chat_service.dart';
+import 'package:aqar/3qar/buyer_app/chat/data/repository/chat_list_repository.dart';
+import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
+import 'package:aqar/3qar/buyer_app/conversation/data/network/message_service.dart';
+import 'package:aqar/3qar/buyer_app/conversation/data/repository/message_repository.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
@@ -19,6 +25,8 @@ import 'package:aqar/core/network/register/register_service.dart';
 import 'package:aqar/core/network/register/register_service_impl.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../3qar/buyer_app/chat/data/network/chat_service_impl.dart';
+import '../../3qar/buyer_app/conversation/data/network/message_service_impl.dart';
 import '../../3qar/buyer_app/favorite/data/favorites_repository.dart';
 import '../../3qar/buyer_app/favorite/data/network/favorite_service.dart';
 import '../../3qar/buyer_app/favorite/data/network/favorite_service_impl.dart';
@@ -43,6 +51,10 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<FavoriteService>(() => FavoriteServiceImpl());
 
   getIt.registerLazySingleton<ProfileService>(() => ProfileServiceImpl());
+
+  getIt.registerLazySingleton<ChatService>(() => ChatServiceImpl());
+
+  getIt.registerLazySingleton<MessageService>(() => MessageServiceImpl());
 
   /// LOGIN
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
@@ -76,4 +88,14 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<ProfileRepository>(
       () => ProfileRepository(getIt()));
   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
+
+  /// CHAT
+  getIt.registerLazySingleton<ChatListRepository>(
+      () => ChatListRepository(getIt()));
+  getIt.registerLazySingleton<ChatListCubit>(() => ChatListCubit(getIt()));
+
+  /// Conversation
+  getIt.registerLazySingleton<MessageRepository>(
+      () => MessageRepository(getIt()));
+  getIt.registerFactory<MessageCubit>(() => MessageCubit(getIt()));
 }

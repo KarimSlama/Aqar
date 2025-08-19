@@ -34,7 +34,6 @@ class ProfileRepository {
       final field = await profileService.updateSingleFieldProfileData(json);
       return ServerResult.success(field);
     } catch (error) {
-      print('error with update singl efield  $error');
       return ServerResult.failure(error.toString());
     }
   }
@@ -42,10 +41,8 @@ class ProfileRepository {
   Future<ServerResult<String>> uploadProfileImageToStorage(File path) async {
     try {
       final image = await profileService.uploadProfileImageToStorage(path);
-      print('image in repo $image');
       return ServerResult.success(image);
     } catch (error) {
-      print('error with upload image repo is $error');
       return ServerResult.failure(error.toString());
     }
   }

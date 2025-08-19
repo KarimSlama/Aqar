@@ -12,7 +12,6 @@ class FavoritesRepository {
       final favorites = await favoriteService.fetchFavoritesProperteis();
       return ServerResult.success(favorites);
     } catch (error) {
-      print('error with repo $error');
       return ServerResult.failure(error.toString());
     }
   }

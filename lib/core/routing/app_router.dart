@@ -1,5 +1,9 @@
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/buyer_navigation_menu.dart';
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
+import 'package:aqar/3qar/buyer_app/conversation/conversation_screen.dart';
+import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
+import 'package:aqar/3qar/buyer_app/conversation/data/network/message_service_impl.dart';
+import 'package:aqar/3qar/buyer_app/conversation/data/repository/message_repository.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
@@ -8,6 +12,7 @@ import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubi
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
 import 'package:aqar/3qar/buyer_app/recommended_for_you_all_properties/recommended_for_you_all_properties_screen.dart';
 import 'package:aqar/3qar/buyer_app/support/support_screen.dart';
+import 'package:aqar/3qar/buyer_app/video_call/video_call_screen.dart';
 import 'package:aqar/3qar/login_option/login_option_screen.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
@@ -26,6 +31,17 @@ import '../../3qar/login/login_screen.dart';
 import '../../3qar/onboarding/onboarding_screen.dart';
 import '../../3qar/sign_up/sign_up_screen.dart';
 import '../service_locator/get_it.dart';
+
+class MessageScreenArgs {
+  final String userToId;
+  final String userToName;
+  final String userImage;
+
+  const MessageScreenArgs(
+      {required this.userToId,
+      required this.userToName,
+      required this.userImage});
+}
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -73,9 +89,7 @@ class AppRouter {
                   ..fetchProperties()
                   ..fetchUnits(),
               ),
-              BlocProvider(create: (context) => getIt<FavoritesCubit>()
-                  // ..fetchAllFavorites(),
-                  ),
+              BlocProvider(create: (context) => getIt<FavoritesCubit>()),
             ],
             child: BuyerNavigationMenu(),
           ),
@@ -141,6 +155,34 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => SupportScreen(),
         );
+
+      case Routes.conversationScreen:
+        final args = settings.arguments as MessageScreenArgs?;
+        if (args == null) {
+          return MaterialPageRoute(
+              builder: (_) => const Text('Error: Missing conversation data'));
+        }
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) {
+              final cubit = getIt<MessageCubit>();
+              cubit.getMessages(args.userToId);
+              return cubit;
+            },
+            child: ConversationScreen(
+              userToId: args.userToId,
+              userToName: args.userToName,
+              userImage: args.userImage,
+            ),
+          ),
+        );
+
+      // case Routes.videoCallScreen:
+      //   final args = settings.arguments as MessageScreenArgs?;
+      //   return MaterialPageRoute(
+      //     builder: (_) => VideoCallScreen(
+      //         userId: args!.userToId, userName: args.userToName),
+      //   );
 
       default:
         return null;

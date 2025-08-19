@@ -92,33 +92,6 @@ class ProfileCubit extends Cubit<ProfileState> {
     );
   }
 
-  // Future<File?> uploadUserProfilePicture() async {
-  //   FilePickerResult? result =
-  //       await FilePicker.platform.pickFiles(type: FileType.image);
-
-  //   if (result != null) {
-  //     File file = File(result.files.single.path!);
-  //     uploadProfileImageToStorage(file);
-  //   }
-  //   return null;
-  // }
-
-  // void uploadProfileImageToStorage(path) async {
-  //   final imageUrl = await profileRepository.uploadProfileImageToStorage(path);
-
-  //   imageUrl.when(
-  //     success: (image) async {
-  //       print(image);
-  //       return image;
-  //     },
-  //     failure: (error) {
-  //       print('error with upload profile with update image $error');
-  //       emit(state.copyWith(
-  //           errorMessage: error, profileDataStatus: ProfileDataState.error));
-  //     },
-  //   );
-  // }
-
   Future<void> updateUserProfilePicture() async {
     FilePickerResult? result =
         await FilePicker.platform.pickFiles(type: FileType.image);
@@ -130,7 +103,6 @@ class ProfileCubit extends Cubit<ProfileState> {
 
     File file = File(result.files.single.path!);
 
-    // 2. Upload the image and get the URL
     final uploadResult =
         await profileRepository.uploadProfileImageToStorage(file);
 
@@ -168,59 +140,6 @@ class ProfileCubit extends Cubit<ProfileState> {
       updated: ProfileUpdateDataState.updated,
     ));
   }
-
-  // Future<void> updateUserProfilePicture() async {
-  //   FilePickerResult? result =
-  //       await FilePicker.platform.pickFiles(type: FileType.image);
-
-  //   if (result == null) {
-  //     // User cancelled the picker
-  //     emit(state.copyWith(profileDataStatus: ProfileDataState.success));
-  //     return;
-  //   }
-
-  //   emit(state.copyWith(
-  //     profileDataStatus: ProfileDataState.loading,
-  //   ));
-
-  //   File file = File(result.files.single.path!);
-
-  //   // 2. Upload the image and get the URL from the repository
-  //   final uploadResult =
-  //       await profileRepository.uploadProfileImageToStorage(file);
-
-  //   await uploadResult.when(
-  //     success: (imageUrl) async {
-  //       // 3. If the upload was successful, update the profile table with the new URL
-  //       final updateResult =
-  //           await profileRepository.updateSingleFieldProfileData({
-  //         'image': imageUrl,
-  //       });
-
-  //       updateResult.when(
-  //         success: (updatedProfile) {
-  //           // 4. Update the state with the new user model and finish loading
-  //           emit(state.copyWith(
-  //             userData: updatedProfile,
-  //             updated: ProfileUpdateDataState.updated,
-  //           ));
-  //         },
-  //         failure: (error) {
-  //           emit(state.copyWith(
-  //             errorMessage: error,
-  //             profileDataStatus: ProfileDataState.error,
-  //           ));
-  //         },
-  //       );
-  //     },
-  //     failure: (error) {
-  //       emit(state.copyWith(
-  //         errorMessage: error,
-  //         profileDataStatus: ProfileDataState.error,
-  //       ));
-  //     },
-  //   );
-  // }
 
   Future<void> logout() async {
     final result = await profileRepository.logout();
