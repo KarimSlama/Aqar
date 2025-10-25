@@ -9,10 +9,13 @@ import '../../../../core/constants/aqar_sizes.dart';
 class PropertyNameWithLocationAndMapIcon extends StatelessWidget {
   final String propertyName;
   final String location;
+  final double latitude, longitude;
   const PropertyNameWithLocationAndMapIcon({
     super.key,
     required this.propertyName,
     required this.location,
+    required this.latitude,
+    required this.longitude,
   });
 
   @override
@@ -28,7 +31,7 @@ class PropertyNameWithLocationAndMapIcon extends StatelessWidget {
             RowIconWithTitle(icon: Iconsax.location_copy, text: location),
           ],
         ),
-        MapIcon()
+        MapIcon(latitude: latitude, longitude: longitude),
       ],
     );
   }

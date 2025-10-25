@@ -86,10 +86,23 @@ class AqarString {
   static const String notSpecified = 'Not specified';
   static const String noReviewsYet = 'No reviews yet';
   static const String somethingWentWrong = 'Something went wrong';
+  static const String thisBuyerHasNoReviewsYet = 'This Buyer has no Reviews yet';
   static const String contactInformation = 'Contact Information';
   static const String userReviews = 'User Reviews';
   static const String save = 'Save';
   static const String typeMessageHere = 'type message here';
   static const String recentProperties = 'Recent Properties';
   static const String noPropertiesPosted = 'No Properties Posted';
+  static const String facebook = 'Facebook';
+  static const String contactUs = 'Contact Us';
+  static const String ifYouHaveAnyInquiresGetInTouchWithUsWeWillBeHappyToHelpYou = 'If You Have any Inquires Get in Touch with Us, We will be Happy to Help You';
+  static const String ourSocialMedia = 'Our Social Media';
+  static const String link = 'Link';
+  static const String whatsapp = 'Whatsapp';
+  static const String chatWithUs = 'Chat with Us';
+  static const String chatWithOurAssistantNow = 'Chat with Our Assistant Now';
+  static const String callUs = 'Call Us';
+  static const String weAreAvailableFromTwelveToTwelve = 'We are available from Twelve To Twelve';
+  static const String emailUs = 'Email Us';
+  static const String weWillGetBackWithin = 'We Will Get Back Within';
 }

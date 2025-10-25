@@ -12,6 +12,12 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/call.svg
+  String get call => 'assets/icons/call.svg';
+
+  /// File path: assets/icons/chat.svg
+  String get chat => 'assets/icons/chat.svg';
+
   /// File path: assets/icons/coupon.svg
   String get coupon => 'assets/icons/coupon.svg';
 
@@ -21,14 +27,34 @@ class $AssetsIconsGen {
   /// File path: assets/icons/google.svg
   String get google => 'assets/icons/google.svg';
 
+  /// File path: assets/icons/link.svg
+  String get link => 'assets/icons/link.svg';
+
   /// File path: assets/icons/nearby.svg
   String get nearby => 'assets/icons/nearby.svg';
 
   /// File path: assets/icons/rent.svg
   String get rent => 'assets/icons/rent.svg';
 
+  /// File path: assets/icons/support.svg
+  String get support => 'assets/icons/support.svg';
+
+  /// File path: assets/icons/whatsapp.svg
+  String get whatsapp => 'assets/icons/whatsapp.svg';
+
   /// List of all assets
-  List<String> get values => [coupon, facebook, google, nearby, rent];
+  List<String> get values => [
+    call,
+    chat,
+    coupon,
+    facebook,
+    google,
+    link,
+    nearby,
+    rent,
+    support,
+    whatsapp,
+  ];
 }
 
 class $AssetsImagesGen {
