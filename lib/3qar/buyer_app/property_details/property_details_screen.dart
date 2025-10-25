@@ -56,7 +56,10 @@ class PropertyDetailsScreen extends StatelessWidget {
               ),
               PropertyNameWithLocationAndMapIcon(
                   propertyName: args.property.propertyName,
-                  location: args.property.location),
+                  location: args.property.location,
+                  latitude: args.property.latitude ?? 0.0,
+                  longitude: args.property.longitude ?? 0.0,
+                  ),
               SectionHeading(
                   text: '${AqarString.price}: ${args.property.price} AED',
                   isActionButton: false),

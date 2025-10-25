@@ -21,7 +21,8 @@ class ProfileDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NormalAqarAppBar(text: AqarString.profileDetails),
+      appBar:
+          NormalAqarAppBar(text: AqarString.profileDetails, hasLeading: true),
       body: BlocProvider.value(
         value: getIt<ProfileCubit>(),
         child: SingleChildScrollView(

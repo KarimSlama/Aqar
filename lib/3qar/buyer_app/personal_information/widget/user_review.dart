@@ -35,8 +35,7 @@ class UserReview extends StatelessWidget {
                     : ListOfUserRatingsCard(ratings: ratings);
 
               case ProfileDataState.error:
-                return Text(
-                    state.errorMessage ?? AqarString.somethingWentWrong);
+                return Text('⚠ ${AqarString.thisBuyerHasNoReviewsYet}');
             }
           },
         ),

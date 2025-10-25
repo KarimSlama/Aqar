@@ -56,7 +56,7 @@ class AqarTextFormField extends StatelessWidget {
       this.minLines,
       this.hintColor,
       this.isDisabeldBoarder = false,
-      this.isEnabled = false,
+      this.isEnabled = true,
       this.isReadOnly = false});
 
   @override

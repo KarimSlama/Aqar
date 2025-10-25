@@ -1,5 +1,6 @@
 import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
 import 'package:aqar/core/common/widgets/list_tiles/settings_menu_tile.dart';
+import 'package:aqar/core/constants/aqar_colors.dart';
 import 'package:aqar/core/constants/aqar_sizes.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/helpers/extensions.dart';
@@ -28,7 +29,23 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 PersonalInformationRowAndAccountDetailsTile(),
                 SettingsMenuTile(
-                    icon: Iconsax.sun_1_copy, title: AqarString.appTheme),
+                  icon: Iconsax.sun_1_copy,
+                  title: AqarString.appTheme,
+                  trailing: Switch(
+                    value: true,
+                    onChanged: (mode) {},
+                    activeColor: AqarColors.white,
+                    activeTrackColor: AqarColors.olive,
+                    trackOutlineColor: WidgetStateProperty.resolveWith(
+                      (final Set<WidgetState> states) {
+                        if (states.contains(WidgetState.selected)) {
+                          return null;
+                        }
+                        return Colors.transparent;
+                      },
+                    ),
+                  ),
+                ),
                 SettingsMenuTile(
                   icon: Iconsax.headphone,
                   title: AqarString.support,
@@ -39,6 +56,7 @@ class ProfileScreen extends StatelessWidget {
                   icon: Iconsax.info_circle_copy,
                   title: AqarString.helpInfo,
                   trailing: SizedBox.shrink(),
+                  onTap: () => context.pushNamed(Routes.helpAndInfoScreen),
                 ),
                 SizedBox(height: AqarSizes.defaultSpace),
                 SettingsMenuTile(

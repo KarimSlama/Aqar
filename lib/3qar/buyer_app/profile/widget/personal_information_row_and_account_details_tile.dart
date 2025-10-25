@@ -44,6 +44,7 @@ class PersonalInformationRowAndAccountDetailsTile extends StatelessWidget {
                     ),
                     HeaderTextwithSubTitle(
                         title: user.fullName, subtitle: user.email!),
+                    Spacer(),
                     Container(
                       width: 80,
                       decoration: BoxDecoration(

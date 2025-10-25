@@ -2,8 +2,6 @@ import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/buyer_navigation_menu.
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
 import 'package:aqar/3qar/buyer_app/conversation/conversation_screen.dart';
 import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
-import 'package:aqar/3qar/buyer_app/conversation/data/network/message_service_impl.dart';
-import 'package:aqar/3qar/buyer_app/conversation/data/repository/message_repository.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
@@ -12,7 +10,6 @@ import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubi
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
 import 'package:aqar/3qar/buyer_app/recommended_for_you_all_properties/recommended_for_you_all_properties_screen.dart';
 import 'package:aqar/3qar/buyer_app/support/support_screen.dart';
-import 'package:aqar/3qar/buyer_app/video_call/video_call_screen.dart';
 import 'package:aqar/3qar/login_option/login_option_screen.dart';
 import 'package:aqar/3qar/sign_up/controller/cubit/sign_up_cubit.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
@@ -21,6 +18,7 @@ import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../3qar/buyer_app/help_and_info/help_and_info_screen.dart';
 import '../../3qar/buyer_app/home/controller/home_cubit.dart';
 import '../../3qar/buyer_app/personal_information/personal_information_screen.dart';
 import '../../3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
@@ -154,6 +152,10 @@ class AppRouter {
       case Routes.supportScreen:
         return MaterialPageRoute(
           builder: (_) => SupportScreen(),
+        );
+      case Routes.helpAndInfoScreen:
+        return MaterialPageRoute(
+          builder: (_) => HelpAndInfoScreen(),
         );
 
       case Routes.conversationScreen:

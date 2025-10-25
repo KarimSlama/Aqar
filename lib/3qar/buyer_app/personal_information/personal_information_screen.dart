@@ -18,8 +18,10 @@ class PersonalInformationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('profile id is : ${profile.id}');
     return Scaffold(
-      appBar: NormalAqarAppBar(text: AqarString.personalInformation),
+      appBar: NormalAqarAppBar(
+          text: AqarString.personalInformation, hasLeading: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(

@@ -50,6 +50,9 @@ class PropertyDetailsModel {
   @JsonKey(name: 'total_reviews_count')
   final int? totalReviewsCount;
 
+  final double? latitude;
+  final double? longitude;
+
   @JsonKey(name: 'property_images')
   final List<PropertyImageModel> propertyImages;
   @JsonKey(name: 'property_features')
@@ -71,6 +74,8 @@ class PropertyDetailsModel {
     this.area,
     this.createdAt,
     this.developerId,
+    this.latitude,
+    this.longitude,
     this.builtInYear,
     this.deliveryInYear,
     this.saleType,

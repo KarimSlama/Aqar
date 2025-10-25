@@ -8,6 +8,10 @@ class AqarColors {
   static const Color gold = Color(0xffFFC42D);
   static const Color orange = Color(0xffFD5F4A);
   static const Color red = Color(0xffDE2727);
+  static const Color amber = Color(0xffFFA31A);
+
+  static const Color lightBlue = Color(0xff16AAEE);
+  static const Color pink = Color(0xffF9ABA9);
 
   static const Color black = Color(0xff1C1C1C);
 
