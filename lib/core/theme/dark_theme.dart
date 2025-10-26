@@ -14,7 +14,7 @@ ThemeData themeDark = ThemeData(
     onSecondary: AqarColors.white,
     onSurface: AqarColors.white,
     onError: AqarColors.white,
-    surface: AqarColors.grey,
+    surface: AqarColors.black,
     brightness: Brightness.dark,
   ),
   appBarTheme: AppBarTheme(

@@ -34,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
                   trailing: Switch(
                     value: true,
                     onChanged: (mode) {},
-                    activeColor: AqarColors.white,
+                    activeThumbColor: AqarColors.white,
                     activeTrackColor: AqarColors.olive,
                     trackOutlineColor: WidgetStateProperty.resolveWith(
                       (final Set<WidgetState> states) {

@@ -26,7 +26,10 @@ class PropertyDetailsBottomSheet extends StatelessWidget {
               logo: property.developer!.companyLogoUrl!,
               propertyLocation: property.location,
               propertyName: property.propertyName,
-              child: MapIcon(latitude: property.latitude, longitude: property.longitude)),
+              child: MapIcon(
+                  latitude: property.latitude,
+                  longitude: property.longitude,
+                  propertyName: property.propertyName, propertyImages: property.propertyImages)),
           SectionHeading(
               text: AqarString.luxuryProperty, isActionButton: false),
           LuxuryPropertyDetails(
