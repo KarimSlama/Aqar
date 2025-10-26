@@ -1,3 +1,4 @@
+import 'package:aqar/3qar/buyer_app/home/data/model/property_image_model.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -10,12 +11,14 @@ class PropertyNameWithLocationAndMapIcon extends StatelessWidget {
   final String propertyName;
   final String location;
   final double latitude, longitude;
+  final List<PropertyImageModel> propertyImages;
   const PropertyNameWithLocationAndMapIcon({
     super.key,
     required this.propertyName,
     required this.location,
     required this.latitude,
     required this.longitude,
+    required this.propertyImages,
   });
 
   @override
@@ -31,7 +34,11 @@ class PropertyNameWithLocationAndMapIcon extends StatelessWidget {
             RowIconWithTitle(icon: Iconsax.location_copy, text: location),
           ],
         ),
-        MapIcon(latitude: latitude, longitude: longitude),
+        MapIcon(
+            latitude: latitude,
+            longitude: longitude,
+            propertyName: propertyName,
+            propertyImages: propertyImages),
       ],
     );
   }

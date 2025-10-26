@@ -1,7 +1,9 @@
+import 'package:aqar/core/common/widgets/dialog/logout_alert_dialog.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/common/widgets/images/cached_images.dart';
@@ -46,24 +48,29 @@ class PersonalInformationRowAndAccountDetailsTile extends StatelessWidget {
                         title: user.fullName, subtitle: user.email!),
                     Spacer(),
                     Container(
-                      width: 80,
+                      width: 80.h,
                       decoration: BoxDecoration(
                           border:
                               Border.all(width: .5, color: AqarColors.darkGrey),
                           borderRadius: BorderRadius.circular(50)),
                       child: TextButton(
-                          onPressed: () async {
-                            await context.read<ProfileCubit>().logout();
-                            await SharedPreference.removeSecureString(
-                                Constants.USER_KEY);
-                            isLoggedUser = false;
-                            if (context.mounted) {
-                              context.pushNamedAndRemoveUntil(
-                                Routes.loginOptionScreen,
-                                predicate: (route) => false,
-                              );
-                            }
-                          },
+                          onPressed: () => showDialog(
+                                context: context,
+                                builder: (_) => LogoutAccountAlertDialog(
+                                  onPressed: () async {
+                                    await context.read<ProfileCubit>().logout();
+                                    await SharedPreference.removeSecureString(
+                                        Constants.USER_KEY);
+                                    isLoggedUser = false;
+                                    if (context.mounted) {
+                                      context.pushNamedAndRemoveUntil(
+                                        Routes.loginOptionScreen,
+                                        predicate: (route) => false,
+                                      );
+                                    }
+                                  },
+                                ),
+                              ),
                           child: Text(AqarString.logout)),
                     ),
                   ],
