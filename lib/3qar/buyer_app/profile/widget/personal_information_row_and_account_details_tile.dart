@@ -15,8 +15,8 @@ import '../../../../core/constants/aqar_sizes.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/local_storage/local_storage.dart';
 import '../../../../core/routing/routes.dart';
-import '../controller/cubit/profile_cubit.dart';
-import '../controller/cubit/profile_state.dart';
+import '../controller/profile/profile_cubit.dart';
+import '../controller/profile/profile_state.dart';
 import '../data/model/profile_enum.dart';
 
 class PersonalInformationRowAndAccountDetailsTile extends StatelessWidget {
@@ -47,32 +47,55 @@ class PersonalInformationRowAndAccountDetailsTile extends StatelessWidget {
                     HeaderTextwithSubTitle(
                         title: user.fullName, subtitle: user.email!),
                     Spacer(),
-                    Container(
-                      width: 80.h,
-                      decoration: BoxDecoration(
-                          border:
-                              Border.all(width: .5, color: AqarColors.darkGrey),
-                          borderRadius: BorderRadius.circular(50)),
-                      child: TextButton(
-                          onPressed: () => showDialog(
-                                context: context,
-                                builder: (_) => LogoutAccountAlertDialog(
-                                  onPressed: () async {
-                                    await context.read<ProfileCubit>().logout();
-                                    await SharedPreference.removeSecureString(
-                                        Constants.USER_KEY);
-                                    isLoggedUser = false;
-                                    if (context.mounted) {
-                                      context.pushNamedAndRemoveUntil(
-                                        Routes.loginOptionScreen,
-                                        predicate: (route) => false,
-                                      );
-                                    }
-                                  },
-                                ),
-                              ),
-                          child: Text(AqarString.logout)),
+                    OutlinedButton(
+                      onPressed: () => showDialog(
+                        context: context,
+                        builder: (_) => LogoutAccountAlertDialog(
+                          onPressed: () async {
+                            await context.read<ProfileCubit>().logout();
+                            await SharedPreference.removeSecureString(
+                                Constants.USER_KEY);
+                            isLoggedUser = false;
+                            if (context.mounted) {
+                              context.pushNamedAndRemoveUntil(
+                                Routes.loginOptionScreen,
+                                predicate: (route) => false,
+                              );
+                            }
+                          },
+                        ),
+                      ),
+                      child: Text(AqarString.logout,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .apply(color: AqarColors.red)),
                     ),
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //       border:
+                    //           Border.all(width: .5, color: AqarColors.darkGrey),
+                    //       borderRadius: BorderRadius.circular(50)),
+                    //   child: TextButton(
+                    // onPressed: () => showDialog(
+                    //       context: context,
+                    //       builder: (_) => LogoutAccountAlertDialog(
+                    //         onPressed: () async {
+                    //           await context.read<ProfileCubit>().logout();
+                    //           await SharedPreference.removeSecureString(
+                    //               Constants.USER_KEY);
+                    //           isLoggedUser = false;
+                    //           if (context.mounted) {
+                    //             context.pushNamedAndRemoveUntil(
+                    //               Routes.loginOptionScreen,
+                    //               predicate: (route) => false,
+                    //             );
+                    //           }
+                    //         },
+                    //       ),
+                    //     ),
+                    //       child: Text(AqarString.logout)),
+                    // ),
                   ],
                 ),
                 SizedBox(height: AqarSizes.md),

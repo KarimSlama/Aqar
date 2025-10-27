@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
-import 'package:aqar/3qar/buyer_app/home/controller/home_state.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_state.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/home_enum.dart';
 import 'package:aqar/core/common/widgets/loaders/recommended_property_shimmer.dart';
 import 'package:aqar/core/helpers/extensions.dart';

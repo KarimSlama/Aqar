@@ -7,7 +7,7 @@ import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../core/common/widgets/app_bar/normal_app_bar.dart';
-import '../../../core/common/widgets/row/contact_information_row.dart';
+import '../../../core/common/widgets/row/title_with_icon_in_row.dart';
 import 'widget/about_me_section_with_text_field.dart';
 import 'widget/recent_properties_related_to_current_user.dart';
 import 'widget/user_review.dart';
@@ -46,9 +46,9 @@ class PersonalInformationScreen extends StatelessWidget {
                 const SizedBox(height: AqarSizes.sm),
                 SectionHeading(
                     text: AqarString.contactInformation, isActionButton: false),
-                ContactInformationRow(
+                TitleWithIconInRow(
                     icon: Iconsax.call, text: profile.formatedPhone),
-                ContactInformationRow(
+                TitleWithIconInRow(
                     icon: Iconsax.message,
                     text: profile.email ?? AqarString.notSpecified),
                 const SizedBox(height: AqarSizes.sm),

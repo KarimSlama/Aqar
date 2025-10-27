@@ -66,6 +66,21 @@ ThemeData themeLight = ThemeData(
     ),
   ),
 
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      side: BorderSide(color: AqarColors.light, width: 1.w),
+      textStyle: GoogleFonts.poppins(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: AqarColors.black,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30.r),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 12.r, vertical: 12.r),
+    ),
+  ),
+
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: AqarColors.green,

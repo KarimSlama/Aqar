@@ -1,10 +1,12 @@
 import 'package:aqar/3qar/login/controller/login_state.dart';
+import 'package:aqar/core/constants/aqar_colors.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:aqar/core/local_storage/local_storage.dart';
 import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../../../core/common/widgets/popups/loaders.dart';
 import '../../../core/constants/constants.dart';
@@ -17,7 +19,7 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) => state.maybeWhen(
-        loading: () => CircularNotchedRectangle(),
+        loading: () => SpinKitSpinningLines(color: AqarColors.gold),
         success: (id) async {
           await SharedPreference.setSecureString(Constants.USER_KEY, id);
           isLoggedUser = true;

@@ -1,4 +1,4 @@
-import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_cubit.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

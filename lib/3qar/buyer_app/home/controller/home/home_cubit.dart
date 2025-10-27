@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:aqar/3qar/buyer_app/home/controller/home_state.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_state.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/home_enum.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/unit_request_model.dart';

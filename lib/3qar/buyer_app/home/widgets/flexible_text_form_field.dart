@@ -6,19 +6,25 @@ import '../../../../core/common/widgets/aqar_text_form_field.dart';
 import '../../../../core/constants/aqar_colors.dart';
 
 class FlexibleTextFormField extends StatelessWidget {
-  const FlexibleTextFormField({super.key});
+  final VoidCallback? onFilterTap;
+  final ValueChanged<String>? onSearchChanged;
+  const FlexibleTextFormField(
+      {super.key,
+      this.onFilterTap,
+      this.onSearchChanged,
+});
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: AqarTextFormField(
         inputType: TextInputType.text,
-        controller: TextEditingController(),
         hint: AqarString.search,
         prefixIcon: Iconsax.search_normal_1_copy,
         borderColor: Colors.transparent,
         hintColor: AqarColors.light,
         isDisabeldBoarder: true,
+        onChanged: onSearchChanged,
       ),
     );
   }
