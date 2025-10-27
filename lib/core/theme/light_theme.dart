@@ -68,11 +68,11 @@ ThemeData themeLight = ThemeData(
 
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      side: BorderSide(color: AqarColors.white, width: 1.w),
+      side: BorderSide(color: AqarColors.light, width: 1.w),
       textStyle: GoogleFonts.poppins(
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
-        color: AqarColors.white,
+        color: AqarColors.black,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.r),

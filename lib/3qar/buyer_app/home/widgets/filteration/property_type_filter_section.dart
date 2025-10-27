@@ -23,7 +23,6 @@ class _PropertyTypeFilterSectionState extends State<PropertyTypeFilterSection> {
   Widget build(BuildContext context) {
     return Column(
       children: types.map((type) {
-        final isSelected = widget.filterData.saleType == type;
         return RadioListTile<String>(
           title: Text(type),
           value: type,

@@ -12,7 +12,8 @@ import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service_impl.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/properties_repository.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/units_repository.dart';
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/profile/profile_cubit.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/theme/cubit/theme_cubit.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/network/profile_service.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/repository/profile_repository.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
@@ -101,4 +102,5 @@ Future<void> setupServiceLocator() async {
   getIt.registerFactory<MessageCubit>(() => MessageCubit(getIt()));
 
   getIt.registerFactory<SearchBloc>(() => SearchBloc(getIt()));
+  getIt.registerFactory<ThemeCubit>(() => ThemeCubit());
 }

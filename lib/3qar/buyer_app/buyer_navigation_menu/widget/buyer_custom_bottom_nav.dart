@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:aqar/core/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -53,14 +54,15 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CircularContainerShadow(
-                              containerColor: isSelected
-                                  ? AqarColors.green
-                                  : AqarColors.white,
+                              containerColor:
+                                  isSelected ? AqarColors.green : null,
                               widget: Icon(
                                 icons[index],
                                 color: isSelected
                                     ? AqarColors.white
-                                    : AqarColors.black,
+                                    : AqarHelperFunctions.isDark(context)
+                                        ? AqarColors.grey
+                                        : AqarColors.black,
                               ),
                               padding: AqarSizes.md,
                               isSelected: isSelected),

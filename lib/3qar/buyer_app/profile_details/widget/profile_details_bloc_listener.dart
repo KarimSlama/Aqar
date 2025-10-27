@@ -1,5 +1,5 @@
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_state.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/profile/profile_cubit.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/profile/profile_state.dart';
 import 'package:aqar/3qar/buyer_app/profile/data/model/profile_enum.dart';
 import 'package:aqar/core/common/widgets/popups/loaders.dart';
 import 'package:aqar/core/service_locator/get_it.dart';

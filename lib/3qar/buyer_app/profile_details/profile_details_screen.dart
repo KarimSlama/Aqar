@@ -1,4 +1,4 @@
-import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
+import 'package:aqar/3qar/buyer_app/profile/controller/profile/profile_cubit.dart';
 import 'package:aqar/3qar/buyer_app/profile_details/widget/profile_details_bloc_listener.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
 import 'package:aqar/core/common/widgets/row/title_with_icon_in_row.dart';

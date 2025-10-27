@@ -7,8 +7,8 @@ import '../../../../core/common/widgets/circulars/circular_container_with_shadow
 import '../../../../core/common/widgets/images/cached_images.dart';
 import '../../../../core/common/widgets/loaders/aqar_shimmer.dart';
 import '../../../../core/helpers/helper_functions.dart';
-import '../../profile/controller/cubit/profile_cubit.dart';
-import '../../profile/controller/cubit/profile_state.dart';
+import '../../profile/controller/profile/profile_cubit.dart';
+import '../../profile/controller/profile/profile_state.dart';
 import '../../profile/data/model/profile_enum.dart';
 
 class ProfileImageWithEditIcon extends StatelessWidget {

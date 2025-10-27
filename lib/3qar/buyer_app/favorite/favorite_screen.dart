@@ -78,7 +78,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       begin: const Offset(1, 0),
                       end: Offset.zero,
                     )),
-                    child: PropertyCard(property: property),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: PropertyCard(property: property),
+                    ),
                   );
                 },
               ),

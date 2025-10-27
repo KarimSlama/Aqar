@@ -7,8 +7,8 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../../core/common/widgets/aqar_text_form_field.dart';
 import '../../../../core/common/widgets/texts/section_heading.dart';
 import '../../../../core/constants/aqar_colors.dart';
-import '../../profile/controller/cubit/profile_cubit.dart';
-import '../../profile/controller/cubit/profile_state.dart';
+import '../../profile/controller/profile/profile_cubit.dart';
+import '../../profile/controller/profile/profile_state.dart';
 
 class AboutMeSectionWithTextField extends StatelessWidget {
   const AboutMeSectionWithTextField({super.key});

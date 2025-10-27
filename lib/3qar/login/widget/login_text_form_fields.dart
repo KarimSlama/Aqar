@@ -17,7 +17,7 @@ class LoginTextFormFields extends StatefulWidget {
   State<LoginTextFormFields> createState() => _LoginTextFormFieldsState();
 }
 
-bool isVisible = false;
+bool isVisible = true;
 
 class _LoginTextFormFieldsState extends State<LoginTextFormFields> {
   @override

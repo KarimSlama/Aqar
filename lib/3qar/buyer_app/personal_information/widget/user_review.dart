@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/common/widgets/loaders/rating_shimmer_loading.dart';
 import '../../../../core/common/widgets/texts/section_heading.dart';
-import '../../profile/controller/cubit/profile_cubit.dart';
-import '../../profile/controller/cubit/profile_state.dart';
+import '../../profile/controller/profile/profile_cubit.dart';
+import '../../profile/controller/profile/profile_state.dart';
 import '../../profile/data/model/profile_enum.dart';
 import '../../property_rating/widgets/list_of_user_ratings_card.dart';
 
