@@ -14,7 +14,7 @@ class RowIconWithTitle extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.text,
-      this.iconColor,
+      this.iconColor = AqarColors.primary,
       this.iconSize,
       this.style,
       this.textColor});

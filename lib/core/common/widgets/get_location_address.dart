@@ -5,7 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../constants/location_constants.dart';
-import 'row/contact_information_row.dart';
+import 'row/title_with_icon_in_row.dart';
 
 class GetLocationAddress extends StatefulWidget {
   final bool isHeading;
@@ -78,7 +78,7 @@ class Get_LocationStateAddress extends State<GetLocationAddress> {
     if (_isLoading) {
       return const AqarShimmerEffect(height: 20, width: 100);
     } else {
-      return ContactInformationRow(
+      return TitleWithIconInRow(
         isHeading: widget.isHeading,
         text: '$_currentAddress',
         icon: widget.icon ?? Iconsax.location,

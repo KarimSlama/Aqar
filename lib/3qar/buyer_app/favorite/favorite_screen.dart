@@ -4,7 +4,7 @@ import 'package:aqar/core/common/widgets/app_bar/normal_app_bar.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../home/controller/home_cubit.dart';
+import '../home/controller/home/home_cubit.dart';
 import '../home/data/model/property_details_model.dart';
 import 'controller.dart/cubit/favorites_state.dart';
 

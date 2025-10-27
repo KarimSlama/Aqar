@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../3qar/buyer_app/help_and_info/help_and_info_screen.dart';
-import '../../3qar/buyer_app/home/controller/home_cubit.dart';
+import '../../3qar/buyer_app/home/controller/home/home_cubit.dart';
 import '../../3qar/buyer_app/personal_information/personal_information_screen.dart';
 import '../../3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
 import '../../3qar/buyer_app/profile_details/profile_details_screen.dart';

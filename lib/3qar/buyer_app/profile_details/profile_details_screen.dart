@@ -1,7 +1,7 @@
 import 'package:aqar/3qar/buyer_app/profile/controller/cubit/profile_cubit.dart';
 import 'package:aqar/3qar/buyer_app/profile_details/widget/profile_details_bloc_listener.dart';
 import 'package:aqar/3qar/sign_up/data/model/user_model.dart';
-import 'package:aqar/core/common/widgets/row/contact_information_row.dart';
+import 'package:aqar/core/common/widgets/row/title_with_icon_in_row.dart';
 import 'package:aqar/core/constants/aqar_string.dart';
 import 'package:aqar/core/service_locator/get_it.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                 ProfileImageWithEditIcon(image: profile.image ?? ''),
                 SizedBox(height: AqarSizes.defaultSpace),
                 GetLocationAddress(),
-                ContactInformationRow(
+                TitleWithIconInRow(
                     text:
                         'Created At: ${AqarHelperFunctions.formatDateTime(profile.createdAt!)}',
                     icon: Iconsax.calendar),

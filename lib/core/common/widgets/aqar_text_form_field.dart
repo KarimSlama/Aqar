@@ -5,7 +5,7 @@ import 'package:aqar/core/constants/aqar_colors.dart';
 
 class AqarTextFormField extends StatelessWidget {
   final TextInputType inputType;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final VoidCallback? onSubmit;
   final String? label;
   final String? hint;
@@ -31,7 +31,7 @@ class AqarTextFormField extends StatelessWidget {
   const AqarTextFormField(
       {super.key,
       required this.inputType,
-      required this.controller,
+      this.controller,
       this.onSubmit,
       this.label,
       this.hint,

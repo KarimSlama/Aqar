@@ -47,4 +47,74 @@ class PropertyServiceImpl implements PropertyService {
       return ServerResult.failure(error.toString());
     }
   }
+
+  @override
+  Future<List<PropertyDetailsModel>> searchProperties(
+      {String? searchQuery,
+      double? minPrice,
+      double? maxPrice,
+      int? numberOfRooms,
+      int? numberOfBathrooms,
+      String? location,
+      String? saleType,
+      int? minArea,
+      int? maxArea}) async {
+    var query =
+        supabase.from('property').select('''*, property_images(image_url),
+      property_features(feature),
+      developers(*)
+    ''');
+    if (searchQuery != null && searchQuery.isNotEmpty) {
+      query = query.or(
+        'property_name.ilike.%$searchQuery%,'
+        'description.ilike.%$searchQuery%,'
+        'location.ilike.%$searchQuery%',
+      );
+    }
+
+    if (minPrice != null) {
+      query = query.gte('price', minPrice);
+    }
+    if (maxPrice != null) {
+      query = query.lte('price', maxPrice);
+    }
+    if (numberOfRooms != null) {
+      query = query.eq('number_of_rooms', numberOfRooms);
+    }
+
+    if (numberOfBathrooms != null) {
+      query = query.eq('number_of_bathrooms', numberOfBathrooms);
+    }
+    if (location != null && location.isNotEmpty) {
+      query = query.ilike('location', '%$location%');
+    }
+
+    if (saleType != null && saleType.isNotEmpty) {
+      query = query.eq('sale_type', saleType);
+    }
+
+    if (minArea != null) {
+      query = query.gte('area', minArea);
+    }
+    if (maxArea != null) {
+      query = query.lte('area', maxArea);
+    }
+
+    final response = await query;
+
+    final properties = response
+        .map<PropertyDetailsModel>(
+            (property) => PropertyDetailsModel.fromJson(property))
+        .toList();
+    return properties;
+  }
+
+  @override
+  Future<List<PropertyDetailsModel>> searchPropertiesNearLocation(
+      {required double latitude,
+      required double longitude,
+      double? radiusInKm}) {
+    // TODO: implement searchPropertiesNearLocation
+    throw UnimplementedError();
+  }
 }

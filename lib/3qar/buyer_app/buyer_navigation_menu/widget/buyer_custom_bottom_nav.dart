@@ -15,7 +15,7 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
   final Function(int index)? onTap;
 
   final List<IconData> icons = const [
-    Iconsax.search_normal_1_copy,
+    Iconsax.headphone_copy,
     Iconsax.heart_copy,
     Iconsax.home_1_copy,
     Iconsax.message_2_copy,

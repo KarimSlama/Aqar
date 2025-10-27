@@ -1,12 +1,12 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/widgets/unit_building_card_item.dart';
 import 'package:aqar/core/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/common/widgets/loaders/properties_shimmer_loading.dart';
-import '../controller/home_state.dart';
+import '../controller/home/home_state.dart';
 import '../data/model/home_enum.dart';
 
 class UnitBuildingListOfCards extends StatelessWidget {

@@ -6,7 +6,8 @@ import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
 import 'package:aqar/3qar/buyer_app/conversation/data/network/message_service.dart';
 import 'package:aqar/3qar/buyer_app/conversation/data/repository/message_repository.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
-import 'package:aqar/3qar/buyer_app/home/controller/home_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/home/home_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/search/bloc/search_bloc.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service_impl.dart';
 import 'package:aqar/3qar/buyer_app/home/data/repository/properties_repository.dart';
@@ -98,4 +99,6 @@ Future<void> setupServiceLocator() async {
   getIt.registerLazySingleton<MessageRepository>(
       () => MessageRepository(getIt()));
   getIt.registerFactory<MessageCubit>(() => MessageCubit(getIt()));
+
+  getIt.registerFactory<SearchBloc>(() => SearchBloc(getIt()));
 }

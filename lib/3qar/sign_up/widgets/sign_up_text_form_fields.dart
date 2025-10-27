@@ -34,7 +34,7 @@ class _SignUpTextFormFieldsState extends State<SignUpTextFormFields> {
         spacing: AqarSizes.spaceBtwItems,
         children: [
           DropdownButtonFormField<String>(
-            value: _selectedUserType,
+            initialValue: _selectedUserType,
             decoration: InputDecoration(
               labelText: 'Account Type',
               border: OutlineInputBorder(),
