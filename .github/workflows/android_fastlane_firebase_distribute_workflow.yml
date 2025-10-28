@@ -8,9 +8,8 @@ on:
 jobs:
   distribute_to_firebase:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the code
+      - name: Checkout the code into this repo
         uses: actions/checkout@v2
 
       - name: Set up JDK 19
