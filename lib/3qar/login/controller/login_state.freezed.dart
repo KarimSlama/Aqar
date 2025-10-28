@@ -21,6 +21,7 @@ mixin _$LoginState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$LoginState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$LoginState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$LoginState {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$LoginState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
     TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$LoginState {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
@@ -133,6 +139,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -144,6 +151,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -155,6 +163,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -170,6 +179,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
     required TResult Function(Error value) error,
   }) {
     return initial(this);
@@ -181,6 +191,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
     TResult? Function(Error value)? error,
   }) {
     return initial?.call(this);
@@ -192,6 +203,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -250,6 +262,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -261,6 +274,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -272,6 +286,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -287,6 +302,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
     required TResult Function(Error value) error,
   }) {
     return loading(this);
@@ -298,6 +314,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
     TResult? Function(Error value)? error,
   }) {
     return loading?.call(this);
@@ -309,6 +326,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -394,6 +412,7 @@ class _$SuccessImpl implements Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
     required TResult Function(String error) error,
   }) {
     return success(id);
@@ -405,6 +424,7 @@ class _$SuccessImpl implements Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
     TResult? Function(String error)? error,
   }) {
     return success?.call(id);
@@ -416,6 +436,7 @@ class _$SuccessImpl implements Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -431,6 +452,7 @@ class _$SuccessImpl implements Success {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
     required TResult Function(Error value) error,
   }) {
     return success(this);
@@ -442,6 +464,7 @@ class _$SuccessImpl implements Success {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
     TResult? Function(Error value)? error,
   }) {
     return success?.call(this);
@@ -453,6 +476,7 @@ class _$SuccessImpl implements Success {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -473,6 +497,129 @@ abstract class Success implements LoginState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordSentImplCopyWith<$Res> {
+  factory _$$ResetPasswordSentImplCopyWith(_$ResetPasswordSentImpl value,
+          $Res Function(_$ResetPasswordSentImpl) then) =
+      __$$ResetPasswordSentImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetPasswordSentImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$ResetPasswordSentImpl>
+    implements _$$ResetPasswordSentImplCopyWith<$Res> {
+  __$$ResetPasswordSentImplCopyWithImpl(_$ResetPasswordSentImpl _value,
+      $Res Function(_$ResetPasswordSentImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ResetPasswordSentImpl implements ResetPasswordSent {
+  const _$ResetPasswordSentImpl();
+
+  @override
+  String toString() {
+    return 'LoginState.resetPasswordSent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetPasswordSentImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
+    required TResult Function(String error) error,
+  }) {
+    return resetPasswordSent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
+    TResult? Function(String error)? error,
+  }) {
+    return resetPasswordSent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (resetPasswordSent != null) {
+      return resetPasswordSent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
+    required TResult Function(Error value) error,
+  }) {
+    return resetPasswordSent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
+    TResult? Function(Error value)? error,
+  }) {
+    return resetPasswordSent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (resetPasswordSent != null) {
+      return resetPasswordSent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordSent implements LoginState {
+  const factory ResetPasswordSent() = _$ResetPasswordSentImpl;
 }
 
 /// @nodoc
@@ -546,6 +693,7 @@ class _$ErrorImpl implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String id) success,
+    required TResult Function() resetPasswordSent,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -557,6 +705,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String id)? success,
+    TResult? Function()? resetPasswordSent,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -568,6 +717,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String id)? success,
+    TResult Function()? resetPasswordSent,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -583,6 +733,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(ResetPasswordSent value) resetPasswordSent,
     required TResult Function(Error value) error,
   }) {
     return error(this);
@@ -594,6 +745,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(ResetPasswordSent value)? resetPasswordSent,
     TResult? Function(Error value)? error,
   }) {
     return error?.call(this);
@@ -605,6 +757,7 @@ class _$ErrorImpl implements Error {
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(ResetPasswordSent value)? resetPasswordSent,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {

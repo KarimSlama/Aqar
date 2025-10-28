@@ -36,40 +36,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Image.asset(Assets.images.logo.path),
-          actions: [
-            TextButton(
-              onPressed: () => context.pushNamed(Routes.loginOptionScreen),
-              child: Text(
-                AqarString.skip,
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-            )
-          ],
-        ),
-        body: PageView(
-          controller: _pageController,
-          children: List.generate(boarding.length, (index) {
-            return OnboardingPageView(
-              pageController: _pageController,
-              isLastPage: index == boarding.length - 1,
-              boardingModel: boarding[index],
-              index: index,
-              currentPage: _currentPage,
-              onFinished: () {
-                if (_pageController.hasClients) {
-                  _pageController.nextPage(
-                    duration: Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  );
-                }
-              },
-            );
-          }),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Image.asset(Assets.images.logo.path),
+        actions: [
+          TextButton(
+            onPressed: () => context.pushNamed(Routes.loginOptionScreen),
+            child: Text(
+              AqarString.skip,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          )
+        ],
+      ),
+      body: PageView(
+        controller: _pageController,
+        children: List.generate(boarding.length, (index) {
+          return OnboardingPageView(
+            pageController: _pageController,
+            isLastPage: index == boarding.length - 1,
+            boardingModel: boarding[index],
+            index: index,
+            currentPage: _currentPage,
+            onFinished: () {
+              if (_pageController.hasClients) {
+                _pageController.nextPage(
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              }
+            },
+          );
+        }),
       ),
     );
   }

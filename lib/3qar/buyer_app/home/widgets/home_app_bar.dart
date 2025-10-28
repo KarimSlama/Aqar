@@ -1,4 +1,6 @@
 import 'package:aqar/core/common/widgets/get_location_address.dart';
+import 'package:aqar/core/helpers/extensions.dart';
+import 'package:aqar/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
@@ -21,7 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: Icon(Iconsax.notification),
-          onPressed: () {},
+          onPressed: () => context.pushNamed(Routes.notificationsScreen),
         ),
       ],
     );

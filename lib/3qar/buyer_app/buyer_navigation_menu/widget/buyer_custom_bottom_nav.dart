@@ -16,7 +16,6 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
   final Function(int index)? onTap;
 
   final List<IconData> icons = const [
-    Iconsax.headphone_copy,
     Iconsax.heart_copy,
     Iconsax.home_1_copy,
     Iconsax.message_2_copy,
@@ -31,7 +30,7 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocSelector<BuyerNavigationCubit, BuyerNavigationState, int>(
-      selector: (state) => state is NavigationChanged ? state.index : 2,
+      selector: (state) => state is NavigationChanged ? state.index : 1,
       builder: (context, currentInex) {
         return Padding(
           padding: const EdgeInsets.all(AqarSizes.md),
@@ -44,13 +43,14 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
                 color: Colors.transparent,
                 radius: AqarSizes.borderRadiusXl,
                 child: Row(
+                  spacing: 7,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: List.generate(icons.length, (index) {
                     final isSelected = currentInex == index;
                     return GestureDetector(
                       onTap: () => onTap?.call(index),
                       child: Column(
-                        spacing: isSelected ? 8 : 0,
+                        spacing: isSelected ? 10 : 0,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           CircularContainerShadow(
@@ -64,7 +64,7 @@ class BuyerCustomBottomNavBar extends StatelessWidget {
                                         ? AqarColors.grey
                                         : AqarColors.black,
                               ),
-                              padding: AqarSizes.md,
+                              padding: 13,
                               isSelected: isSelected),
                         ],
                       ),

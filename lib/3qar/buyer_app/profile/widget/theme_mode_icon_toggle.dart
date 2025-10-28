@@ -28,7 +28,6 @@ class ThemeModeIconToggle extends StatelessWidget {
                 if (states.contains(WidgetState.selected)) {
                   return null;
                 }
-                return Colors.transparent;
               },
             ),
           ),

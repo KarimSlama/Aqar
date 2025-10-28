@@ -60,6 +60,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/chatbot.json
+  String get chatbot => 'assets/images/chatbot.json';
+
   /// File path: assets/images/empty.json
   String get empty => 'assets/images/empty.json';
 
@@ -104,6 +107,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    chatbot,
     empty,
     house,
     house2,

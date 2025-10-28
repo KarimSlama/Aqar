@@ -52,11 +52,12 @@ class AqarBarInputField extends StatelessWidget {
                     controller: controller,
                     maxLines: maxLines,
                     minLines: minLines,
-                    style: const TextStyle(color: AqarColors.silver),
+                    style: const TextStyle(color: AqarColors.grey),
                     decoration: InputDecoration(
                       hintText: hintText,
                       hintStyle: TextStyle(
                           color: AqarColors.light, fontWeight: FontWeight.w400),
+                      fillColor: AqarColors.darkGrey,
                       border: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
