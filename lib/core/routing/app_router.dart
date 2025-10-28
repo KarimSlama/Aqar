@@ -2,9 +2,12 @@ import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/buyer_navigation_menu.
 import 'package:aqar/3qar/buyer_app/buyer_navigation_menu/controller/buyer_navigation_cubit.dart';
 import 'package:aqar/3qar/buyer_app/conversation/conversation_screen.dart';
 import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
+import 'package:aqar/3qar/buyer_app/customer_service/cubit/customer_service_cubit.dart';
+import 'package:aqar/3qar/buyer_app/customer_service/customer_service_screen.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/data/model/property_details_model.dart';
 import 'package:aqar/3qar/buyer_app/home/home_screen.dart';
+import 'package:aqar/3qar/buyer_app/notifications/notifications_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_details/property_details_screen.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/controller/cubit/rating_cubit.dart';
 import 'package:aqar/3qar/buyer_app/property_rating/property_rating_screen.dart';
@@ -56,7 +59,10 @@ class AppRouter {
 
       case Routes.loginOptionScreen:
         return MaterialPageRoute(
-          builder: (_) => LoginOptionScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: LoginOptionScreen(),
+          ),
         );
 
       case Routes.loginScreen:
@@ -179,12 +185,18 @@ class AppRouter {
           ),
         );
 
-      // case Routes.videoCallScreen:
-      //   final args = settings.arguments as MessageScreenArgs?;
-      //   return MaterialPageRoute(
-      //     builder: (_) => VideoCallScreen(
-      //         userId: args!.userToId, userName: args.userToName),
-      //   );
+      case Routes.customerServiceScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CustomerServiceCubit>(),
+            child: CustomerServiceScreen(),
+          ),
+        );
+
+      case Routes.notificationsScreen:
+        return MaterialPageRoute(
+          builder: (_) => NotificationsScreen(),
+        );
 
       default:
         return null;
