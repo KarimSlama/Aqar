@@ -5,7 +5,11 @@ import 'package:aqar/3qar/buyer_app/chat/data/repository/chat_list_repository.da
 import 'package:aqar/3qar/buyer_app/conversation/cubit/message_cubit.dart';
 import 'package:aqar/3qar/buyer_app/conversation/data/network/message_service.dart';
 import 'package:aqar/3qar/buyer_app/conversation/data/repository/message_repository.dart';
+import 'package:aqar/3qar/buyer_app/customer_service/cubit/customer_service_cubit.dart';
+import 'package:aqar/3qar/buyer_app/customer_service/data/network/customer_service.dart';
+import 'package:aqar/3qar/buyer_app/customer_service/data/repository/customer_service_repository.dart';
 import 'package:aqar/3qar/buyer_app/favorite/controller.dart/cubit/favorites_cubit.dart';
+import 'package:aqar/3qar/buyer_app/home/controller/categories/cubit/categories_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/controller/home/home_cubit.dart';
 import 'package:aqar/3qar/buyer_app/home/controller/search/bloc/search_bloc.dart';
 import 'package:aqar/3qar/buyer_app/home/data/network/property_service.dart';
@@ -58,6 +62,8 @@ Future<void> setupServiceLocator() async {
 
   getIt.registerLazySingleton<MessageService>(() => MessageServiceImpl());
 
+  getIt.registerLazySingleton<CustomerService>(() => CustomerService());
+
   /// LOGIN
   getIt.registerLazySingleton<LoginRepository>(() => LoginRepository(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
@@ -101,6 +107,14 @@ Future<void> setupServiceLocator() async {
       () => MessageRepository(getIt()));
   getIt.registerFactory<MessageCubit>(() => MessageCubit(getIt()));
 
-  getIt.registerFactory<SearchBloc>(() => SearchBloc(getIt()));
+  getIt.registerLazySingleton<SearchBloc>(() => SearchBloc(getIt()));
+  getIt.registerLazySingleton<CategoriesCubit>(() => CategoriesCubit(getIt()));
   getIt.registerFactory<ThemeCubit>(() => ThemeCubit());
+
+  /// Customer Service
+  getIt.registerLazySingleton<CustomerServiceRepository>(
+      () => CustomerServiceRepository(getIt(), getIt()));
+
+  getIt.registerFactory<CustomerServiceCubit>(
+      () => CustomerServiceCubit(getIt()));
 }
