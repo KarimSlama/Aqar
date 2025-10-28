@@ -1,3 +1,4 @@
+import 'package:aqar/3qar/login/widget/login_bloc_listener.dart';
 import 'package:aqar/3qar/login_option/widgets/grid_view_for_top_images.dart';
 import 'package:aqar/core/common/widgets/texts/text_span.dart';
 import 'package:aqar/core/constants/aqar_colors.dart';
@@ -49,6 +50,7 @@ class LoginOptionScreen extends StatelessWidget {
                   actionText: AqarString.register,
                   onActionTextTap: () =>
                       context.pushNamed(Routes.signUpScreen)),
+              LoginBlocListener(),
             ],
           ),
         ),

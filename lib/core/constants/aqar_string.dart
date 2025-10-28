@@ -36,6 +36,8 @@ class AqarString {
   static const String login = 'Login';
   static const String congratulations = 'Congratulations!';
   static const String youLoggedInSuccessfully = 'You logged in successfully!';
+  static const String passwordResetEmailSent =
+      'Password reset email sent successfully!';
   static const String youJoinedAqarSuccessfully =
       'You joinded 3qar successfully!';
   static const String getReadyToFeelConfidentWithANewAqar =
@@ -58,7 +60,7 @@ class AqarString {
   static const String bedroomsNo = 'Bedrooms no.';
   static const String bedrooms = 'Bedrooms';
   static const String bathrooms = 'Bathrooms';
-  static const String area = 'Area (in Sqft)';
+  static const String areaInSqft = 'Area (in Sqft)';
   static const String bathroomsNo = 'Bathrooms no.';
   static const String deliveryIn = 'Delivery in';
   static const String buildInYear = 'Build in Year';
@@ -86,7 +88,8 @@ class AqarString {
   static const String notSpecified = 'Not specified';
   static const String noReviewsYet = 'No reviews yet';
   static const String somethingWentWrong = 'Something went wrong';
-  static const String thisBuyerHasNoReviewsYet = 'This Buyer has no Reviews yet';
+  static const String thisBuyerHasNoReviewsYet =
+      'This Buyer has no Reviews yet';
   static const String contactInformation = 'Contact Information';
   static const String userReviews = 'User Reviews';
   static const String save = 'Save';
@@ -95,14 +98,47 @@ class AqarString {
   static const String noPropertiesPosted = 'No Properties Posted';
   static const String facebook = 'Facebook';
   static const String contactUs = 'Contact Us';
-  static const String ifYouHaveAnyInquiresGetInTouchWithUsWeWillBeHappyToHelpYou = 'If You Have any Inquires Get in Touch with Us, We will be Happy to Help You';
+  static const String
+      ifYouHaveAnyInquiresGetInTouchWithUsWeWillBeHappyToHelpYou =
+      'If You Have any Inquires Get in Touch with Us, We will be Happy to Help You';
   static const String ourSocialMedia = 'Our Social Media';
   static const String link = 'Link';
   static const String whatsapp = 'Whatsapp';
   static const String chatWithUs = 'Chat with Us';
   static const String chatWithOurAssistantNow = 'Chat with Our Assistant Now';
   static const String callUs = 'Call Us';
-  static const String weAreAvailableFromTwelveToTwelve = 'We are available from Twelve To Twelve';
+  static const String weAreAvailableFromTwelveToTwelve =
+      'We are available from Twelve To Twelve';
   static const String emailUs = 'Email Us';
   static const String weWillGetBackWithin = 'We Will Get Back Within';
+
+  // Categories
+  static const String nearby = 'Nearby';
+  static const String forSale = 'For Sale';
+  static const String forRent = 'For Rent';
+
+  // Filter
+  static const String select = 'Select';
+  static const String location = 'Location';
+  static const String areaLabel = 'Area';
+  static const String rooms = 'Rooms';
+  static const String type = 'Type';
+  static const String cancel = 'Cancel';
+  static const String apply = 'Apply';
+  static const String filterByType = 'Filter by Type';
+  static const String filterByPrice = 'Filter by Price';
+  static const String filterByArea = 'Filter by Area';
+  static const String filterByLocation = 'Filter by Location';
+  static const String filterByRooms = 'Filter by Rooms';
+  static const String minPrice = 'Min Price';
+  static const String maxPrice = 'Max Price';
+  static const String minArea = 'Min Area (m²)';
+  static const String maxArea = 'Max Area (m²)';
+  static const String areaSqm = 'Area (sqm)';
+  static const String noOfRooms = 'NO. of Rooms';
+  static const String noOfBathrooms = 'NO. of Bathrooms';
+  static const String propertyType = 'Property Type';
+  static const String numberOfBedrooms = 'Number of Bedrooms';
+  static const String numberOfBathrooms = 'Number of Bathrooms';
+  static const String allProperties = 'All Properties';
 }

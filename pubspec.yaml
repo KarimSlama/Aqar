@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1+1
 
 environment:
   sdk: ^3.6.0
@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   file_picker: ^10.3.1
   firebase_core: ^4.0.0
+  google_sign_in: ^6.1.5
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1

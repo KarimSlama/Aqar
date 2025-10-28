@@ -10,8 +10,8 @@ class ThemeCubit extends Cubit<ThemeState> {
     getCurrentTheme();
   }
 
-  void getCurrentTheme() {
-    final isDark = SharedPreference.getBool('isDark') ?? false;
+  void getCurrentTheme() async{
+    final isDark = await SharedPreference.getBool('isDark') ?? false;
 
     if (isDark) {
       emit(DarkThemeState(themeDark));
@@ -20,11 +20,11 @@ class ThemeCubit extends Cubit<ThemeState> {
     }
   }
 
-  void toggleTheme() {
+  void toggleTheme() async{
     final currentIsDark = state.isDark;
     final newIsDark = !currentIsDark;
 
-    SharedPreference.setData('isDark', newIsDark);
+    await SharedPreference.setData('isDark', newIsDark);
 
     if (newIsDark) {
       emit(DarkThemeState(themeDark));

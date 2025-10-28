@@ -75,6 +75,10 @@ class AqarHelperFunctions {
     }
   }
 
+  static String formatTime(DateTime time) {
+    return '${time.hour}:${time.minute.toString().padLeft(2, '0')}';
+  }
+
   static String extractUserName(String body) {
     final regex = RegExp(r'"(.*?)"');
     final matches = regex.allMatches(body);

@@ -7,5 +7,6 @@ class LoginState with _$LoginState {
   const factory LoginState.initial() = _Initial;
   const factory LoginState.loading() = Loading;
   const factory LoginState.success(String id) = Success;
+  const factory LoginState.resetPasswordSent() = ResetPasswordSent;
   const factory LoginState.error({required String error}) = Error;
 }

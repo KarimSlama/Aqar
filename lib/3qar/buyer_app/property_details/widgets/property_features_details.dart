@@ -38,7 +38,7 @@ class PropertyFeaturesDetails extends StatelessWidget {
       {
         'icon': Iconsax.pharagraphspacing,
         'iconTitle': '$area',
-        'featureTitle': AqarString.area
+        'featureTitle': AqarString.areaInSqft
       },
       {
         'icon': Iconsax.timer_1_copy,
@@ -53,7 +53,7 @@ class PropertyFeaturesDetails extends StatelessWidget {
       {
         'icon': Iconsax.car_copy,
         'iconTitle': '$garageForCars Cars',
-        'featureTitle': AqarString.area
+        'featureTitle': AqarString.areaInSqft
       },
     ];
 

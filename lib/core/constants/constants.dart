@@ -36,4 +36,11 @@ class Constants {
       throw 'Could not open Gmail';
     }
   }
+
+  static Future<void> launchMyUrl(String urlString) async {
+  final Uri _url = Uri.parse(urlString);
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
 }

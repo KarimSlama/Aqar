@@ -15,4 +15,9 @@ class UserServiceImpl implements UserService {
       return ServerResult.failure(error.toString());
     }
   }
+
+  @override
+  String? getCurrentUserId() {
+    return supabase.auth.currentUser?.id;
+  }
 }

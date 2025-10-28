@@ -3,6 +3,7 @@ import 'package:aqar/3qar/buyer_app/property_details/data/model/property_args.da
 import 'package:aqar/core/common/widgets/icons/favorite_icons.dart';
 import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../core/common/widgets/images/cached_images.dart';
@@ -16,13 +17,14 @@ import '../../../../core/routing/routes.dart';
 
 class PropertyCard extends StatelessWidget {
   final PropertyDetailsModel property;
-  final bool isFavNeeded, isDisplayedInRow;
+  final bool isFavNeeded, isDisplayedInRow, isCompactMode;
 
   const PropertyCard({
     super.key,
     required this.property,
     this.isFavNeeded = true,
     this.isDisplayedInRow = false,
+    this.isCompactMode = false,
   });
 
   @override
@@ -68,38 +70,73 @@ class PropertyCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.all(AqarSizes.ms),
+                    padding: EdgeInsetsDirectional.all(
+                        isCompactMode ? 4 : AqarSizes.ms),
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        DeveloperLogoWithLocationAndPropertyNameRow(
-                          logo: property.developer!.companyLogoUrl!,
-                          propertyLocation: property.location,
-                          propertyName: property.propertyName,
-                          isRow: isDisplayedInRow,
+                        Expanded(
+                          child: DeveloperLogoWithLocationAndPropertyNameRow(
+                            logo: property.developer!.companyLogoUrl!,
+                            propertyLocation: property.location,
+                            propertyName: property.propertyName,
+                            isRow: isDisplayedInRow,
+                          ),
                         ),
-                        const Spacer(),
-                        isDisplayedInRow
-                            ? SizedBox.shrink()
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  RowIconWithTitle(
-                                    icon: Icons.bed_outlined,
-                                    text: '${property.numberOfBeds} Beds',
-                                  ),
-                                  HeightSeperator(),
-                                  RowIconWithTitle(
+                        if (isDisplayedInRow)
+                          SizedBox.shrink()
+                        else if (isCompactMode)
+                          // Compact mode: show minimal info
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              spacing: 20.w,
+                              children: [
+                                Flexible(
+                                  child: RowIconWithTitle(
                                     icon: Icons.shower,
-                                    text: '${property.numberOfBathrooms} Bath',
+                                    text: '${property.numberOfBathrooms}',
                                   ),
-                                  HeightSeperator(),
-                                  RowIconWithTitle(
+                                ),
+                                HeightSeperator(),
+                                Flexible(
+                                  child: RowIconWithTitle(
                                     icon: Iconsax.slider_horizontal_1_copy,
                                     text: '${property.area} m',
                                   ),
-                                ],
-                              )
+                                ),
+                              ],
+                            ),
+                          )
+                        else
+                          Row(
+                            spacing: 10.w,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Flexible(
+                                child: RowIconWithTitle(
+                                  icon: Icons.bed_outlined,
+                                  text: '${property.numberOfBeds} Beds',
+                                ),
+                              ),
+                              HeightSeperator(),
+                              Flexible(
+                                child: RowIconWithTitle(
+                                  icon: Icons.shower,
+                                  text: '${property.numberOfBathrooms} Bath',
+                                ),
+                              ),
+                              HeightSeperator(),
+                              Flexible(
+                                child: RowIconWithTitle(
+                                  icon: Iconsax.slider_horizontal_1_copy,
+                                  text: '${property.area} m',
+                                ),
+                              ),
+                            ],
+                          )
                       ],
                     ),
                   ),
