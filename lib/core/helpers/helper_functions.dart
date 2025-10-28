@@ -2,33 +2,18 @@ import 'package:aqar/core/helpers/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class VibeHelperFunctions {
-  static Color? getColor(String value) {
-    switch (value) {
-      case 'Green':
-        return Colors.green;
-      case 'Red':
-        return Colors.red;
-      case 'Blue':
-        return Colors.blue;
-      case 'Pink':
-        return Colors.pink;
-      case 'Purple':
-        return Colors.purple;
-      case 'Amber':
-        return Colors.amber;
-      case 'Orange':
-        return Colors.deepOrange;
-      case 'White':
-        return Colors.white;
-      case 'Black':
-        return Colors.black;
-      case 'Brown':
-        return Colors.brown;
-
-      default:
-        return null;
+class AqarHelperFunctions {
+  static double calculateMonthlyInstallment(
+    double price,
+    double downPayment,
+    int installmentPeriodYears,
+  ) {
+    if (installmentPeriodYears == 0) {
+      return 0;
     }
+    final remainingAmount = price - downPayment;
+    final totalMonths = installmentPeriodYears * 12;
+    return remainingAmount / totalMonths;
   }
 
   static void showSnackBar(String message, context) {
@@ -88,6 +73,10 @@ class VibeHelperFunctions {
     } catch (e) {
       return isoDate;
     }
+  }
+
+  static String formatTime(DateTime time) {
+    return '${time.hour}:${time.minute.toString().padLeft(2, '0')}';
   }
 
   static String extractUserName(String body) {

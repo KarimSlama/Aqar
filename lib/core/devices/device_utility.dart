@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class VibeDeviceUtility {
+class AqarDeviceUtility {
   static void hideKeyboard(context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }

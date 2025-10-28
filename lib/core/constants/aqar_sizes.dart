@@ -41,6 +41,7 @@ class AqarSizes {
   static double borderRadiusMd = 8;
   static const double borderRadiusLg = 12;
   static const double borderRadiusXl = 20;
+  static const double borderRadiusXxl = 40;
 
   /// Product Item Dimensions
   static double productImageSize = 120;
@@ -66,4 +67,5 @@ class AqarSizes {
 
   /// Grid View Spacing
   static double gridViewSpacing = 16;
+  static double gridViewLgSpacing = 32;
 }

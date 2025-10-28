@@ -1,0 +1,52 @@
+import 'package:aqar/core/helpers/helper_functions.dart';
+import 'package:flutter/material.dart';
+
+import '../../../constants/aqar_string.dart';
+
+class SectionHeading extends StatelessWidget {
+  final bool isActionButton, isIcon;
+  final String text, buttonText;
+  final Color? textColor, iconColor;
+  final void Function()? onPressed;
+  final IconData? icon;
+  const SectionHeading(
+      {super.key,
+      this.isActionButton = true,
+      required this.text,
+      this.buttonText = AqarString.seeAll,
+      this.textColor,
+      this.onPressed,
+      this.isIcon = false,
+      this.icon,
+      this.iconColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: AqarHelperFunctions.screenWidth(context) / 1.4,
+          child: Text(
+            text,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .apply(color: textColor),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+        if (isActionButton)
+          TextButton(onPressed: onPressed, child: Text(buttonText)),
+        if (isIcon)
+          IconButton(
+              onPressed: onPressed,
+              icon: Icon(
+                icon,
+                color: iconColor,
+              )),
+      ],
+    );
+  }
+}
